@@ -1,0 +1,356 @@
+ <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../../../../assets/register/plugins/bootstrap/bootstrap.min.css">
+
+  <!-- slick slider -->
+  <link rel="stylesheet" href="../../../../assets/register/plugins/slick/slick.css">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="../../../../assets/register/plugins/themify-icons/themify-icons.css">
+  <!-- animation css -->
+  <link rel="stylesheet" href="../../../../assets/register/plugins/animate/animate.css">
+  <!-- aos -->
+  <link rel="stylesheet" href="../../../../assets/register/plugins/aos/aos.css">
+  <!-- venobox popup -->
+  <link rel="stylesheet" href="../../../../assets/register/plugins/venobox/venobox.css">
+
+  <!-- Main Stylesheet -->
+  
+  <!--Favicon-->
+  <link rel="shortcut icon" href="../../../../assets/register/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../../../../assets/register/images/favicon.ico" type="image/x-icon">
+
+<div class="ftco-blocks-cover-1">
+   
+  <div class="ftco-blocks-cover-1">
+    <!-- data-stellar-background-ratio="0.5" style="background-image: url('images/hero_1.jpg')" -->
+   <div class="site-section-cover overlay" data-stellar-background-ratio="0.5">
+    <img src="assets/img/tr.png" class="tr" alt="img">
+    <img src="assets/img/br.png" class="br" alt="img">
+    <img src="assets/img/bl.png" class="bl" alt="img">
+     <div class="container">
+       <div class="row align-items-center ">
+
+         <div class="col-md-5 mt-5 pt-5">
+           <h1 class="mb-3 font-weight-bold text-teal">Registration!</h1>
+           <p><a [routerLink]="['']" class="text-teal" style="color: black;">Home</a> <span class="mx-3">/</span> <a [routerLink]="['/login']" class="text-teal" style="color: black;">Sign In</a></p>
+         </div>
+         
+       </div>
+     </div>
+   </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<div class="container">
+    <div class="contact__wrapper shadow-lg mt-n9">
+        
+        <div class="row no-gutters">
+            <div class="col-lg-5 contact-info__wrapper gradient-brand-color p-5 order-lg-2">
+                <img  alt="Image" class="img-fluid"> <!-- src="../../../../assets/register/images/kid_transparent.png"-->
+
+                <h3 class="color--white mb-5">SignUp now </h3>   
+    
+                <figure class="figure position-absolute m-0 opacity-06 z-index-100" style="bottom:0; right: 10px">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="444px" height="626px">
+                        <defs>
+                            <linearGradient id="PSgrad_1" x1="0%" x2="81.915%" y1="57.358%" y2="0%">
+                                <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="1"></stop>
+                                <stop offset="100%" stop-color="rgb(0,54,207)" stop-opacity="0"></stop>
+                            </linearGradient>
+    
+                        </defs>
+                        <path fill-rule="evenodd" opacity="0.302" fill="rgb(72, 155, 248)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
+                        <path fill="url(#PSgrad_1)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
+                    </svg>
+                </figure>
+            </div>
+    
+
+            <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+                <form (ngSubmit)="userRegister()" action="#" class="contact-form form-validate" novalidate="novalidate">
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label class="required-field" for="firstName">First Name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="user.firstName" placeholder="First Name">
+                            </div>
+                        </div>
+    
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="user.lastName" placeholder="Last Name">
+                            </div>
+                        </div>
+    
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label class="required-field" for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" placeholder="example@gmail.com">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label class="required-field" for="pssword">Password</label>
+                                <input type="password" class="form-control" id="pssword" name="pssword" [(ngModel)]="user.password" placeholder="password">
+                            </div>
+                        </div>
+    
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label for="telephone">Phone Number</label>
+                                <input type="tel" class="form-control" id="telephone" name="telephone" [(ngModel)]="user.phoneNumber" placeholder="+216..">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label for="adress">Address</label>
+                                <input type="text" class="form-control" id="adress" name="adress" [(ngModel)]="user.address" placeholder="address">
+                            </div>
+                        </div> 
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" name="city" [(ngModel)]="user.city" placeholder="city">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label for="birthDate">Birth Date</label>
+                                <input type="date" class="form-control" id="birthDate" name="birthDate" [(ngModel)]="user.birthDate" placeholder="date">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 mb-3">
+                            <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+                            <div class="col-sm-10">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="female" [(ngModel)]="user.gender" name="gender" value="FEMALE">
+                                <label class="form-check-label" for="female">Female</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="male" [(ngModel)]="user.gender" name="gender" value="MALE">
+                                <label class="form-check-label" for="male">Male</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label  for="inputState" class="form-label">Role</label>
+                                <select id="role" name="role" [(ngModel)]="user.role">
+                                <option value="Patient">Patient</option>
+                                <option value="Donator">Donator</option>
+                                <option value="AssociationMember">Association Member</option>
+                                <option value="DrugsProvider">Drugs Provider</option> 
+                              </select>
+                            </div>
+                          </div>
+
+
+                       
+                        
+                      
+
+                        <div class="col-sm-12 mb-3" >
+                            <button type="submit"  name="submit" class="btn button4">Submit</button>
+                        </div>
+    
+                    </div>
+                </form>
+            </div>
+            <!-- End Contact Form Wrapper -->
+    
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button2 {background-color: #66BA63;} /* green */
+    .button3 {background-color: #80D07D;} /* Red */ 
+    .button4 {background-color: #5C905A; color: black;} /* Gray */ 
+    .button5 {background-color: #555555;} /* Black */
+ 
+ 
+ 
+ html,body{
+   display: grid;
+   height: 100vh;
+   place-items:center;
+   background: #be2edd;
+ }
+ .main_div{
+   width: 365px;
+   background: #fff;
+   padding: 30px;
+   border-radius: 5px;
+   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+ }
+ .main_div .title{
+   text-align: center;
+   font-size: 30px;
+   font-weight: 600;
+ }
+ .main_div .social_icons{
+   margin-top: 20px;
+   display: flex;
+   justify-content: center;
+ }
+ .social_icons a{
+   display: block;
+   height: 45px;
+   width: 100%;
+   line-height: 45px;
+   text-align: center;
+   border-radius: 5px;
+   font-size: 20px;
+   color: #fff;
+   text-decoration: none;
+   transition: all 0.3s linear;
+ }
+ .social_icons a span{
+   margin-left: 5px;
+   font-size: 18px;
+ }
+ .social_icons a:first-child{
+   margin-right: 5px;
+   background: #4267B2;
+ }
+ .social_icons a:first-child:hover{
+   background: #375695;
+ }
+ .social_icons a:last-child{
+   margin-left: 5px;
+   background: #1DA1F2;
+ }
+ .social_icons a:last-child:hover{
+   background: #0d8bd9;
+ }
+ form {
+   margin-top: 25px;
+ }
+ form .input_box{
+   height: 50px;
+   width: 100%;
+   position: relative;
+   margin-top: 15px;
+ }
+ .input_box input{
+   height: 100%;
+   width: 100%;
+   outline: none;
+   border: 1px solid lightgrey;
+   border-radius: 5px;
+   padding-left: 45px;
+   font-size: 17px;
+   transition: all 0.3s ease;
+ }
+ .input_box input:focus{
+   border-color: darkcyan;
+ }
+ .input_box .icon{
+   position: absolute;
+   top: 50%;
+   left: 20px;
+   transform: translateY(-50%);
+   color: grey;
+ }
+ form .option_div{
+   margin-top: 5px;
+   display: flex;
+   justify-content: space-between;
+ }
+ .option_div .check_box{
+   display: flex;
+   align-items: center;
+ }
+ .option_div span{
+   margin-left: 5px;
+   font-size: 16px;
+   color: #333;
+ }
+ .option_div .forget_div a{
+   font-size: 16px;
+   color: darkcyan;
+ }
+ .button input{
+   padding-left: 0;
+   background: darkcyan;
+   color: #fff;
+   border: none;
+   font-size: 20px;
+   font-weight: 500;
+   cursor: pointer;
+   transition: all 0.3s linear;
+ }
+ .button input:hover{
+   background: darkcyan;
+ }
+ form .sign_up{
+   text-align: center;
+   margin-top: 25px;
+ }
+ .sign_up a{
+   color: darkcyan;
+ }
+ form a{
+   text-decoration: none;
+ }
+ form a:hover{
+   text-decoration: underline;
+ }
+ 
+ 
+ .select-box select {
+   height: 100%;
+   width: 100%;
+   outline: none;
+   border: none;
+   color: #707070;
+   font-size: 1rem;
+ }
+ .form .column {
+   display: flex;
+   column-gap: 15px;
+ }
+ .form :where(.select-box) {
+   position: relative;
+   height: 50px;
+   width: 100%;
+   outline: none;
+   font-size: 1rem;
+   color: #707070;
+   margin-top: 8px;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   padding: 0 15px;
+ }
+ 
+ 
+  
+    </style>
