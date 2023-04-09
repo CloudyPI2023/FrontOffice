@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { ForgetPassService } from './forget-pass.service';
+import { ForgetPassService } from '../../services/forget-pass.service';
 import { Router } from '@angular/router';
 
 @Component({

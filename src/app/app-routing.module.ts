@@ -56,7 +56,7 @@ const routes: Routes = [
   { path: 'registration',component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path : 'forgetPassword', component:ForgetPasswordComponent},
-  {path: 'reset', component: ResetPasswordComponent},
+  { path: 'resetPassword', component: ResetPasswordComponent},
   { path: '**', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } }
 ];
 
