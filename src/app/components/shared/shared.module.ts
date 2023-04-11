@@ -19,6 +19,7 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { ClinicSidebarComponent } from './clinic-sidebar/clinic-sidebar.component';
 import { SmallCartComponent } from './small-cart/small-cart.component';
 import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
+//import { LoginComponent } from '../pages/login/login.component';
 
 
 
@@ -35,7 +36,8 @@ import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
     MobileMenuComponent,
     ClinicSidebarComponent,
     SmallCartComponent,
-    ShopSidebarComponent
+    ShopSidebarComponent,
+  //  LoginComponent
   ],
   imports: [
     CommonModule,

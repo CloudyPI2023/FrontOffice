@@ -10,15 +10,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./forget-password.component.css']
 })
 export class ForgetPasswordComponent implements OnInit {
-  formModel = {
-    email: ''
-  } 
+  formModel: any = {};
+
   constructor(private service: ForgetPassService,private formBuilder: FormBuilder,private http:HttpClient,private route:Router) { }
 
 
   ngOnInit():void {
+
+    this.formModel = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]]
+    });
   }
 
+  
 
   submit(form: NgForm){
     console.log(form.value)  

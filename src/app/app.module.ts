@@ -10,17 +10,21 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/pages/registration/registration.component';
-import { LoginComponent } from './components/pages/login/login.component';
 import { ForgetPasswordComponent } from './components/pages/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './components/pages/reset-password/reset-password.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { SharedModule } from './components/shared/shared.module';
+import { HeaderComponent } from './components/shared/header/header.component';
+
+import {NgToastModule} from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LoginComponent,
     ForgetPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { ResetPasswordComponent } from './components/pages/reset-password/reset-
     BreadcrumbModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgToastModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
