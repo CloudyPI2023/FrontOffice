@@ -16,7 +16,6 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
 import { HeaderComponent } from './components/shared/header/header.component';
 
-import {NgToastModule} from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -35,7 +34,6 @@ import {NgToastModule} from 'ng-angular-popup';
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgToastModule
     
   ],
   providers: [],
