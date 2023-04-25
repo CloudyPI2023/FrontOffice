@@ -2,6 +2,7 @@
 
 <app-header-two></app-header-two>
 <app-breadcrumbs></app-breadcrumbs>
+<!--
 <div class="card-body">
     <div class="table-responsive">
         <table class="table">
@@ -69,7 +70,7 @@
         </table>
     </div>
 </div>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
 
 
 
@@ -114,8 +115,8 @@
                         <div class="col-lg-6 col-md-6" *ngFor ="let donation of donations">
                             <div class="sigma_team style-16">
                                 <div class="sigma_team-thumb">
-                                    <img [src]="donation.imageDonation" [alt]="donation.imageDonation">
-                                    
+                                    <img src="../../../assets/img/donationAssociation/{{donation.imageDonation}}" [alt]="donation.imageDonation" height="348" width="350">
+                                    <!--<td><img src="../../../assets/img/{{donation.imageDonation}}" height="50" width="50"></td> -->
                                 </div>
                                 <div class="sigma_team-body">
                                     <h5>
