@@ -1,0 +1,153 @@
+
+
+<app-header-two></app-header-two>
+<app-breadcrumbs></app-breadcrumbs>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table">
+            <thead class=" text-primary">
+           
+                <th>
+                    id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Image
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    status
+                </th>
+                <th>
+                    idRequest
+                </th>
+                <th>
+                    User
+                </th>
+                <th>
+                    Actions
+                </th>
+             
+            </thead>
+            <tbody>
+                <tr *ngFor ="let donation of donations">
+              
+                    <td>{{donation.idDonation}}</td>  
+                    <td>{{donation.nameDonation}}</td> 
+                    <td>{{donation.descriptionDonation}}</td> 
+                    <td>{{donation.quantityDonation}}</td> 
+                    <td>{{donation.imageDonation}}</td>  
+                    <td>{{donation.dateDonation}}</td> 
+                    <td>{{donation.donationType}}</td> 
+                    <td>
+                        <span class="badge badge-success rounded-pill d-inline">{{donation.statusDonation}}</span>
+                        
+                    </td> 
+                    <td>{{donation.idRequest}}</td> 
+                    <td>{{donation.userDonation.firstName}}</td>  
+                      
+                    <td>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">edit</button>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">delete</button>
+                    </td>
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<app-footer></app-footer>
+
+
+
+<div class="sidebar-style-9">
+    <div class="section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+
+
+                   <!-- <app-clinic-sidebar></app-clinic-sidebar> -->
+                   <div class="sidebar mb-5">
+                    <!-- Category Widget -->
+                    <div class="widget widget-categories">
+                        <h5 class="widget-title">Donations</h5>
+                        <ul>
+                            <!-- Data -->
+
+                            <li>
+                                <a> New Donation </a>
+                                <a> My Donations </a>
+                               
+                            </li>
+                            <!-- Data -->
+                        </ul>
+                    </div>
+                    <div class="widget p-0 border-0">
+                        <div class="sigma_contact-map">
+                            <iframe title="map"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9914406081493!2d2.292292615201654!3d48.85837360866272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sin!4v1571115084828!5m2!1sen!2sin"
+                                height="300" allowfullscreen="">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="col-lg-8">
+                    <div class="row">
+                        <!-- Data -->
+                        <div class="col-lg-6 col-md-6" *ngFor ="let donation of donations">
+                            <div class="sigma_team style-16">
+                                <div class="sigma_team-thumb">
+                                    <img [src]="donation.imageDonation" [alt]="donation.imageDonation">
+                                    
+                                </div>
+                                <div class="sigma_team-body">
+                                    <h5>
+                                        <a >{{donation.nameDonation}}</a>
+                                    </h5>
+                                    <div class="sigma_rating">
+                                        
+                                        <span class="ml-3">{{donation.quantityDonation}}</span>
+                                    </div>
+                                    <div class="sigma_team-categories">
+                                        <a 
+                                            class="sigma_team-category">{{donation.donationType}}</a>
+                                    </div>
+                                    <div class="sigma_team-info">
+                                        <span>
+                                            <i class="fal fa-map-marker-alt"></i>
+                                            {{donation.dateDonation}}
+                                        </span>
+                                    </div>
+                                    <a  class="sigma_btn btn-block btn-sm">View
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Data -->
+                    </div>
+                    <!-- Pagination -->
+                    
+                    <!-- Pagination -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

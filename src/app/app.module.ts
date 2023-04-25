@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AssociationComponent } from './association/association.component';
+import { DonationComponent } from './donation/donation.component';
 
 @NgModule({
   declarations: [

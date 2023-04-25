@@ -98,6 +98,28 @@
         ]
     },
     {
+        "id": 4,
+        "linkText": "Donations",
+        "child": true,
+        "submenu": [
+            {
+                "id": 4.1,
+                "link": "/donation",
+                "linkText": "donation"
+            },
+            {
+                "id": 4.2,
+                "link": "/association",
+                "linkText": "association"
+            },
+            {
+                "id": 4.3,
+                "link": "/",
+                "linkText": "Requests"
+            }
+        ]
+    },
+    {
         "id": 5,
         "linkText": "Doctors",
         "child": true,
