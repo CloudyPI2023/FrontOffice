@@ -7,4 +7,6 @@ export class Association {
     descriptionAssocation: string;
     phoneNumberAssocation: string;
     countryAssocation: string;
+    dateAssociation: Date;
+    nbAnneeAssociation: number;
 }
