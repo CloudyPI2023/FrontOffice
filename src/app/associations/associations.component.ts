@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Association } from '../models/association';
-import { AssociationService } from './association.service';
+import { AssociationService } from '../association/association.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-association',
-  templateUrl: './association.component.html',
-  styleUrls: ['./association.component.css']
+  selector: 'app-associations',
+  templateUrl: './associations.component.html',
+  styleUrls: ['./associations.component.css']
 })
-export class AssociationComponent implements OnInit {
-
-  page: number = 1;
+export class AssociationsComponent implements OnInit {
 
   associations: Association[];
   public detailsAssociation?: Association;
@@ -50,6 +48,8 @@ export class AssociationComponent implements OnInit {
     container?.appendChild(button);
     button.click();
   }
+
+ 
 
 
 }

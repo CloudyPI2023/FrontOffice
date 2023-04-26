@@ -4,6 +4,8 @@ import { DonationComponent } from './donation/donation.component';
 import { Association } from './models/association';
 import { AssociationComponent } from './association/association.component';
 import { AssociationDetailComponent } from './association/association-detail/association-detail.component';
+import { AssociationsComponent } from './associations/associations.component';
+import { RequestComponent } from './request/request.component';
 
 const routes: Routes = [
   // Home
@@ -39,6 +41,8 @@ const routes: Routes = [
   { path: 'donation', component:DonationComponent  },
   { path: 'association',component:AssociationComponent },
   { path: 'association/:idAssociation',component:AssociationDetailComponent },
+  { path: 'associations',component:AssociationsComponent },
+  { path: 'myRequests',component:RequestComponent },
 
   // Doctors
   { path: 'doctor/cat/:catId', loadChildren: () => import('./components/pages/doctor-grid/doctor-grid.module').then(m => m.DoctorGridModule), data: { breadcrumb: "Doctor Grid" } },

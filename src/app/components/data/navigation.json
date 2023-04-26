@@ -116,6 +116,11 @@
                 "id": 4.3,
                 "link": "/",
                 "linkText": "Requests"
+            },
+            {
+                "id": 4.4,
+                "link": "/",
+                "linkText": "associations"
             }
         ]
     },

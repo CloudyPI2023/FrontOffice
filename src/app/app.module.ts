@@ -11,10 +11,13 @@ import { AppComponent } from './app.component';
 import { AssociationComponent } from './association/association.component';
 import { DonationComponent } from './donation/donation.component';
 import { AssociationDetailComponent } from './association/association-detail/association-detail.component';
+import { AssociationsComponent } from './associations/associations.component';
+import { RequestComponent } from './request/request.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    
     
   ],
   imports: [
