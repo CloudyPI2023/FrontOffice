@@ -10,10 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssociationComponent } from './association/association.component';
 import { DonationComponent } from './donation/donation.component';
+import { AssociationDetailComponent } from './association/association-detail/association-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,

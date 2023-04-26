@@ -18,4 +18,7 @@ export class AssociationService {
   getAssociationList(): Observable<Association[]>{
    return this.httpClient.get<Association[]>(this.url + 'associations/retrieveAllAssociations');
   }
+  getAssociationById(idAssociation: number): Observable<Association>{
+    return this.httpClient.get<Association>(`${this.url}/retrieveAssociation/${idAssociation}`);
+  }
 }

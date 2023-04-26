@@ -109,10 +109,10 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <!-- Data -->
-                        <div class="col-lg-6 col-md-6" *ngFor ="let donation of donations">
+                        <div class="col-lg-6 col-md-6" *ngFor ="let association of associations">
                             <div class="sigma_team style-16">
                                 <div class="sigma_team-thumb">
-                                    <img src="../../../assets/img/donationAssociation/{{association.logoAssocation}}" [alt]="association.logoAssocation" height="348" width="350">
+                                    <img src="../../../assets/img/donationAssociation/{{association.logoAssocation}}" [alt]="association.logoAssocation" height="248" width="199">
                                     <!--<td><img src="../../../assets/img/{{donation.imageDonation}}" height="50" width="50"></td> -->
                                 </div>
                                 <div class="sigma_team-body">
@@ -133,7 +133,7 @@
                                             {{association.dateAssociation}}
                                         </span>
                                     </div>
-                                    <a  class="sigma_btn btn-block btn-sm">View
+                                    <a  class="sigma_btn btn-block btn-sm" (click)="detailAssociation(association.idAssociation)">View
                                         More</a>
                                 </div>
                             </div>

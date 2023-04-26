@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DonationComponent } from './donation/donation.component';
 import { Association } from './models/association';
 import { AssociationComponent } from './association/association.component';
+import { AssociationDetailComponent } from './association/association-detail/association-detail.component';
 
 const routes: Routes = [
   // Home
@@ -37,7 +38,7 @@ const routes: Routes = [
   // Clinics
   { path: 'donation', component:DonationComponent  },
   { path: 'association',component:AssociationComponent },
-
+  { path: 'association/:idAssociation',component:AssociationDetailComponent },
 
   // Doctors
   { path: 'doctor/cat/:catId', loadChildren: () => import('./components/pages/doctor-grid/doctor-grid.module').then(m => m.DoctorGridModule), data: { breadcrumb: "Doctor Grid" } },

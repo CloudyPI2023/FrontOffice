@@ -10,3 +10,4 @@ export class Association {
     dateAssociation: Date;
     nbAnneeAssociation: number;
 }
+ 

@@ -21,6 +21,7 @@ import { SmallCartComponent } from './small-cart/small-cart.component';
 import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
 import { AssociationComponent } from 'src/app/association/association.component';
 import { DonationComponent } from 'src/app/donation/donation.component';
+import { AssociationDetailComponent } from 'src/app/association/association-detail/association-detail.component';
 
 
 
@@ -39,7 +40,8 @@ import { DonationComponent } from 'src/app/donation/donation.component';
     SmallCartComponent,
     ShopSidebarComponent,
     AssociationComponent,
-    DonationComponent
+    DonationComponent,
+    AssociationDetailComponent
   ],
   imports: [
     CommonModule,

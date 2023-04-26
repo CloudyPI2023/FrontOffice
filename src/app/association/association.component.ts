@@ -24,4 +24,8 @@ export class AssociationComponent implements OnInit {
    
   } 
 
+  detailAssociation(idAssociation : number){
+    this.router.navigate(['association', idAssociation]);
+  }
+
 }
