@@ -8,10 +8,18 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductManagementComponent } from './components/pages/product-management/product-management.component';
+import { ReclamationManagementComponent } from './components/pages/reclamation-management/reclamation-management.component';
+import { CategoryManagementComponent } from './components/pages/category-management/category-management.component';
+import { GiftManagementComponent } from './components/pages/gift-management/gift-management.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductManagementComponent,
+    ReclamationManagementComponent,
+    CategoryManagementComponent,
+    GiftManagementComponent
   ],
   imports: [
     BrowserModule,

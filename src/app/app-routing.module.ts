@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductManagementComponent } from './components/pages/product-management/product-management.component';
+import { CategoryManagementComponent } from './components/pages/category-management/category-management.component';
+import { ReclamationManagementComponent } from './components/pages/reclamation-management/reclamation-management.component';
+import { GiftManagementComponent } from './components/pages/gift-management/gift-management.component';
 
 const routes: Routes = [
   // Home
@@ -49,7 +53,14 @@ const routes: Routes = [
   { path: 'contact', loadChildren: () => import('./components/pages/contact/contact.module').then(m => m.ContactModule), data: { breadcrumb: "Contact Us" } },
   // Extra
   { path: 'error-page', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } },
-  { path: '**', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } }
+  { path: '**', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } },
+
+
+  //ProductAndGiftsManagement
+  {path:'product-management',component:ProductManagementComponent},
+  {path:'category-management',component:CategoryManagementComponent},
+  {path:'reclamation-management',component:ReclamationManagementComponent},
+  {path:'gift-management',component:GiftManagementComponent}
 ];
 
 @NgModule({

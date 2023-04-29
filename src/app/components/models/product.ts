@@ -16,7 +16,7 @@ export class Product {
     expirationDateProduct:Date;
     userProduct:User[];
     categoryProduct:Category[];
-    ReclamationsProduct:Reclamation[],
+    ReclamationsProduct:Reclamation[];
 
     constructor( idProduct:number,referenceProduct:String,nameProduct:String, imageProduct:String, descriptionProduct:String,
         priceProduct:number,quantityProduct:number,expired:number,expirationDateProduct:Date,
