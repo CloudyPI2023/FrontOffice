@@ -104,7 +104,7 @@
         "submenu": [
             {
                 "id": 5.1,
-                "link": "/product-management",
+                "link": "product-management",
                 "linkText": "Our products"
             },
             {

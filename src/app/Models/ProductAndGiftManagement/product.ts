@@ -5,20 +5,20 @@ import { Reclamation } from "./reclamation";
 
 
 export class Product {
-    idProduct:number;
-    referenceProduct:String;
-    nameProduct:String;
-    imageProduct:String;
-    descriptionProduct:String;
-    priceProduct:number;
-    quantityProduct:number;
-    expired:number;
-    expirationDateProduct:Date;
-    userProduct:User[];
-    categoryProduct:Category[];
-    ReclamationsProduct:Reclamation[];
+    idProduct:number | undefined;;
+    referenceProduct:String | undefined;;
+    nameProduct:String | undefined;;
+    imageProduct:String | undefined;;
+    descriptionProduct:String | undefined;;
+    priceProduct:number | undefined;;
+    quantityProduct:number | undefined;;
+    expired:number | undefined;;
+    expirationDateProduct:Date | undefined;;
+    userProduct:User[] | undefined;;
+    categoryProduct:Category[] | undefined;;
+    ReclamationsProduct:Reclamation[] | undefined;;
 
-    constructor( idProduct:number,referenceProduct:String,nameProduct:String, imageProduct:String, descriptionProduct:String,
+    /*constructor( idProduct:number,referenceProduct:String,nameProduct:String, imageProduct:String, descriptionProduct:String,
         priceProduct:number,quantityProduct:number,expired:number,expirationDateProduct:Date,
         userProduct:User[],categoryProduct:Category[],ReclamationsProduct:Reclamation[]){
             this.idProduct=idProduct;
@@ -35,6 +35,6 @@ export class Product {
             this.ReclamationsProduct=ReclamationsProduct;
 
 
-        }
+        }*/
 
 }

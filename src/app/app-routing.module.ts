@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductManagementComponent } from './components/pages/product-management/product-management.component';
-import { CategoryManagementComponent } from './components/pages/category-management/category-management.component';
-import { ReclamationManagementComponent } from './components/pages/reclamation-management/reclamation-management.component';
-import { GiftManagementComponent } from './components/pages/gift-management/gift-management.component';
+import { ProductManagementComponent } from '../app/product-management/product-management.component';
+import { CategoryManagementComponent } from '../app/category-management/category-management.component';
+import { ReclamationManagementComponent } from '../app/reclamation-management/reclamation-management.component';
+import { GiftManagementComponent } from '../app/gift-management/gift-management.component';
 
 const routes: Routes = [
   // Home
@@ -33,10 +33,10 @@ const routes: Routes = [
   { path: 'clinic-list', loadChildren: () => import('./components/pages/clinic-list/clinic-list.module').then(m => m.ClinicListModule), data: { breadcrumb: "Clinic List" } },
   { path: 'clinic-details/:id', loadChildren: () => import('./components/pages/clinic-details/clinic-details.module').then(m => m.ClinicDetailsModule), data: { breadcrumb: "Clinic Details" } },
   // Doctors
-  { path: 'doctor/cat/:catId', loadChildren: () => import('./components/pages/doctor-grid/doctor-grid.module').then(m => m.DoctorGridModule), data: { breadcrumb: "Doctor Grid" } },
+ /* { path: 'doctor/cat/:catId', loadChildren: () => import('./components/pages/doctor-grid/doctor-grid.module').then(m => m.DoctorGridModule), data: { breadcrumb: "Doctor Grid" } },
   { path: 'doctor-grid', loadChildren: () => import('./components/pages/doctor-grid/doctor-grid.module').then(m => m.DoctorGridModule), data: { breadcrumb: "Doctor Grid" } },
   { path: 'doctor-list', loadChildren: () => import('./components/pages/doctor-list/doctor-list.module').then(m => m.DoctorListModule), data: { breadcrumb: "Doctor List" } },
-  { path: 'doctor-details/:id', loadChildren: () => import('./components/pages/doctor-details/doctor-details.module').then(m => m.DoctorDetailsModule), data: { breadcrumb: "Doctor Details" } },
+  { path: 'doctor-details/:id', loadChildren: () => import('./components/pages/doctor-details/doctor-details.module').then(m => m.DoctorDetailsModule), data: { breadcrumb: "Doctor Details" } },*/
   // Shop
   { path: 'shop/cat/:catId', loadChildren: () => import('./components/pages/shop-grid/shop-grid.module').then(m => m.ShopGridModule), data: { breadcrumb: "Shop Grid" } },
   { path: 'shop/tag/:tagId', loadChildren: () => import('./components/pages/shop-grid/shop-grid.module').then(m => m.ShopGridModule), data: { breadcrumb: "Shop Grid" } },

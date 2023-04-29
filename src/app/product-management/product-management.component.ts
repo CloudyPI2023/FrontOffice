@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgToastService } from 'ng-angular-popup';
+//import { NgToastService } from 'ng-angular-popup';
 import { ProductService } from './product.service';
 import { Router } from '@angular/router';
-import { Product } from '../../models/product';
+import { Product } from '../Models/ProductAndGiftManagement/product';
 
 @Component({
   selector: 'app-product-management',
@@ -13,7 +13,7 @@ export class ProductManagementComponent implements OnInit {
 
   allProducts:Product[] | undefined
 
-  constructor(private ps: ProductService, router: Router, private toast: NgToastService) {  }
+  constructor(private ps: ProductService, router: Router) {  }
 
   ngOnInit(): void {
     this.getAllProducts();

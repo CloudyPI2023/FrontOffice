@@ -1,8 +1,8 @@
 export class User {
-    idUser:number;
-    firstName:String;
-    lastName:String;
-    email:String;
+    idUser:number | undefined;
+    firstName:String| undefined;;
+    lastName:String| undefined;;
+    email:String| undefined;;
 
     constructor(  idUser:number,firstName:String,lastName:String,email:string){
         this.idUser=idUser;
