@@ -8,6 +8,9 @@ import { AssociationsComponent } from './associations/associations.component';
 import { RequestComponent } from './request/request.component';
 import { AddDonationComponent } from './donation/add-donation/add-donation.component';
 import { MyDonationsComponent } from './donation/my-donations/my-donations.component';
+import { ContactDonationComponent } from './donation/contact-donation/contact-donation.component';
+import { DonationsGiftComponent } from './donation/donations-gift/donations-gift.component';
+import { CollectComponent } from './donation/collect/collect.component';
 
 const routes: Routes = [
   // Home
@@ -38,8 +41,8 @@ const routes: Routes = [
   { path: 'clinic-details/:id', loadChildren: () => import('./components/pages/clinic-details/clinic-details.module').then(m => m.ClinicDetailsModule), data: { breadcrumb: "Clinic Details" } },
 
 
-  //Donations 
-  // Clinics
+  //Donations And Association Crud
+  
   { path: 'donation', component:DonationComponent  },
   { path: 'addDonation', component:AddDonationComponent },
   { path: 'myDonations', component:MyDonationsComponent },
@@ -47,6 +50,9 @@ const routes: Routes = [
   { path: 'association/:idAssociation',component:AssociationDetailComponent },
   { path: 'associations',component:AssociationsComponent },
   { path: 'myRequests',component:RequestComponent },
+  { path: 'contactDonations',component:ContactDonationComponent },
+  { path: 'donationGifts',component:DonationsGiftComponent },
+  { path: 'collectDonations',component: CollectComponent},
 
   // Doctors
   { path: 'doctor/cat/:catId', loadChildren: () => import('./components/pages/doctor-grid/doctor-grid.module').then(m => m.DoctorGridModule), data: { breadcrumb: "Doctor Grid" } },

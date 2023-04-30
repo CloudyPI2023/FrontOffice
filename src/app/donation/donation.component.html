@@ -7,12 +7,21 @@
                 <div class="sigma_subheader-inner">
                     <h1>Our Donations</h1>
                 </div>
+
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a routerLink="/" class="btn-link">Esprit</a>
+                        <a routerLink="/donation" class="btn-link">All</a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">PharmaLIFE</li>
+                    <li class="breadcrumb-item">
+                        <a routerLink="/myDonations" class="btn-link">MyDonations</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a routerLink="/addDonation" class="btn-link">New Donation</a>
+                    </li>
+                   
                 </ol>
+
+
            
         </div>
         <img src="assets/img/subheader-br.png" class="br" alt="subheader">
@@ -22,35 +31,11 @@
 
 <!--data-->
 
-<div class="section section-padding pt-0">
+<div class="section">
     <div class="container">
-        
         <div class="row">
-            <div class="col-12">
-                <div class="sigma_tab-item style-2 with-dots">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a >
-                                <span class="pulsive-dot"></span>
-                                All
-                            </a>
-                            <a >
-                                <span class="pulsive-dot"></span>
-                                Events
-                            </a>
-                            <a >
-                                <span class="pulsive-dot"></span>
-                                MyDonations
-                            </a>
-                            <a >
-                                <span class="pulsive-dot"></span>
-                                New Donation
-                            </a>
-                            
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
+        
             <div class="tab-content col-12" id="myTabContent">
                 <div class="row">
                     <!-- Data -->
@@ -60,25 +45,7 @@
                                <!--<a routerLink="/product-single/{{item.id}}"><img [src]="item.image[0]"
                                         [alt]="item.title"></a> -->
                                         <a > <img src="../../../assets/img/donationAssociation/{{donation.imageDonation}}" [alt]="donation.imageDonation" height="140" width="400"></a>
-                                <div class="sigma_product-controls">
-                                    <!-- Wishlist -->
-                                    <a 
-                                         placement="top"
-                                        ngbTooltip="Add To Wishlist"> <i class="far fa-heart"></i> </a>
-                                    <a  class="active" 
-                                        placement="top"
-                                        ngbTooltip="Remove To Wishlist"> <i class="far fa-heart"></i> </a>
-                                    <!-- Cart -->
-                                    <a href="javascript:void(0)"
-                                        placement="top" ngbTooltip="Add To Cart"> <i class="far fa-shopping-basket"></i>
-                                    </a>
                                 
-                                    <!-- Quick view -->
-                                   
-                                    <a href="javascript:void(0)" placement="top" ngbTooltip="Quick View"> <i
-                                        class="far fa-eye" ></i> </a>
-                                          
-                                </div>
                             </div>
                             <div class="sigma_product-body">
                                 <h5 class="sigma_product-title"> <a

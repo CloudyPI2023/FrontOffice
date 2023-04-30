@@ -29,7 +29,7 @@ export class AddDonationComponent implements OnInit {
   } 
 
   goToDonationsList(){
-    this.router.navigate(['/donation']);
+    this.router.navigate(['/myDonations']);
   }
 
   onSubmit(){

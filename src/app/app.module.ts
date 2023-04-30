@@ -14,12 +14,15 @@ import { AssociationDetailComponent } from './association/association-detail/ass
 import { AssociationsComponent } from './associations/associations.component';
 import { RequestComponent } from './request/request.component';
 import { MyDonationsComponent } from './donation/my-donations/my-donations.component';
+import { ContactDonationComponent } from './donation/contact-donation/contact-donation.component';
+import { DonationsGiftComponent } from './donation/donations-gift/donations-gift.component';
+import { CollectComponent } from './donation/collect/collect.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
     
   ],
   imports: [

@@ -10,31 +10,26 @@ import { Router } from '@angular/router';
 })
 export class MyDonationsComponent implements OnInit {
 
-  donation: Donation = new Donation();
+  donations: Donation[]; 
 
   constructor(private donationService: DonationService,
     private router:Router) { } 
 
   ngOnInit(): void {
+    this.getDonations(); 
   }
 
-  saveDonation(){
-    this.donationService.createDonation(this.donation).subscribe(data =>{
+  private getDonations(){
+    this.donationService.getDonationList().subscribe(data => {
+      this.donations = data;
+    });
+  }
+
+  deleteDonation(idDonation: number){
+    this.donationService.deleteDonation(idDonation).subscribe(data =>{
       console.log(data);
-      this.goToDonationsList();
-    },
-    error => console.log(error)
-    
-    );
-  } 
-
-  goToDonationsList(){
-    this.router.navigate(['/donation']);
-  }
-
-  onSubmit(){
-    console.log(this.donation);
-    this.saveDonation();
+      this.getDonations();
+    })
   }
 
 

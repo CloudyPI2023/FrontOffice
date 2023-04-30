@@ -9,10 +9,17 @@
         </div>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a routerLink="/" class="btn-link">Esprit</a>
+                <a routerLink="/donation" class="btn-link">All</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">PharmaLIFE</li>
+            <li class="breadcrumb-item">
+                <a routerLink="/myDonations" class="btn-link">MyDonations</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a routerLink="/addDonation" class="btn-link">New Donation</a>
+            </li>
+           
         </ol>
+
 
     </div>
     <img src="assets/img/subheader-br.png" class="br" alt="subheader">
@@ -22,55 +29,42 @@
 
 <!--data-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="section">
+    <div class="container">
+        <div class="row">
 
-    <div _ngcontent-hii-c4="" class="container">
-        <div _ngcontent-hii-c4="" class="row">
-            <div _ngcontent-hii-c4="" class="col-lg-4">
-                <div _ngcontent-hii-c4="" class="sigma_accordion style-13">
-                    <div _ngcontent-hii-c4="" class="sigma_tab-item style-4">
+            <div class="col-lg-4">
+                <div class="sigma_accordion style-13">
+                    <div class="sigma_tab-item style-4">
 
-                        <ul _ngcontent-sdw-c4="" class="nav nav-tabs" id="myTab" ngbnav="" role="tablist">
-                            <li _ngcontent-sdw-c4="" ng-reflect-_id="1" class="nav-item">
-                                <a _ngcontent-sdw-c4="" href="" ngbnavlink="" id="ngb-nav-0" class="nav-link" role="tab"
-                                    aria-selected="true" aria-disabled="false" aria-controls="ngb-nav-0-panel"> My
+                        <ul class="nav nav-tabs" id="myTab" ngbnav="" role="tablist">
+                            <li ng-reflect-_id="1" class="nav-item">
+                                <a href="" ngbnavlink="" id="ngb-nav-0" class="nav-link active" role="tab"
+                                    aria-selected="true" aria-disabled="false" aria-controls="ngb-nav-0-panel"
+                                    routerLink="/myDonations"> My
                                     Donations
                                     <i _ngcontent-sdw-c4="" class="fal fa-chevron-right"></i></a>
                                 <!---->
                             </li>
                             <li _ngcontent-sdw-c4="" ng-reflect-_id="2" class="nav-item">
-                                <a _ngcontent-sdw-c4="" href="" ngbnavlink="" id="ngb-nav-1" class="nav-link active"
-                                    role="tab" aria-selected="false" aria-disabled="false">New Donation
+                                <a _ngcontent-sdw-c4="" href="" ngbnavlink="" id="ngb-nav-1" class="nav-link" role="tab"
+                                    aria-selected="false" aria-disabled="false" routerLink="/addDonation">New Donation
                                     <i _ngcontent-sdw-c4="" class="fal fa-chevron-right"></i></a><!---->
                             </li>
                             <li _ngcontent-sdw-c4="" ng-reflect-_id="3" class="nav-item"><a _ngcontent-sdw-c4="" href=""
                                     ngbnavlink="" id="ngb-nav-2" class="nav-link" role="tab" aria-selected="false"
-                                    aria-disabled="false"> Collect <i _ngcontent-sdw-c4=""
-                                        class="fal fa-chevron-right"></i>
+                                    aria-disabled="false" routerLink="/collectDonations"> Collect <i
+                                        _ngcontent-sdw-c4="" class="fal fa-chevron-right"></i>
                                 </a><!----></li>
                             <li _ngcontent-sdw-c4="" ng-reflect-_id="4" class="nav-item"><a _ngcontent-sdw-c4="" href=""
                                     ngbnavlink="" id="ngb-nav-3" class="nav-link" role="tab" aria-selected="false"
-                                    aria-disabled="false"> MyGifts <i _ngcontent-sdw-c4=""
+                                    aria-disabled="false" routerLink="/donationGifts"> MyGifts <i _ngcontent-sdw-c4=""
                                         class="fal fa-chevron-right"></i>
                                 </a><!----></li>
                             <li _ngcontent-sdw-c4="" ng-reflect-_id="5" class="nav-item"><a _ngcontent-sdw-c4="" href=""
                                     ngbnavlink="" id="ngb-nav-4" class="nav-link" role="tab" aria-selected="false"
-                                    aria-disabled="false"> Contact <i _ngcontent-sdw-c4="" class="fal fa-chevron-right">
+                                    aria-disabled="false" routerLink="/contactDonations"> Contact <i
+                                        _ngcontent-sdw-c4="" class="fal fa-chevron-right">
 
                                     </i></a><!----></li>
                         </ul>
@@ -78,90 +72,43 @@
                 </div>
             </div>
             <div _ngcontent-hii-c4="" class="col-lg-8">
-                <!--Formulaire D'ajout d'une Donation-->
+                <!--My Donations List By Id-->
 
-                <form (ngSubmit)="onSubmit()">
-                <div class="sigma_form style-7">
-                    <div class="form-block">
-                        <h4>New Donation:</h4>
-                        
-                        <div class="row">
 
-                           
-                            
-                            <div class="col-lg-6">
-                                 <div class="form-group">
-                                    
-                                    <input type="text" class="form-control" id="nameDonation" [(ngModel)]="donation.nameDonation"
-                                    placeholder="Donation Name" name="nameDonation">
-                                 </div>
+                <div class="row mt-5 mt-lg-0">
+                    <!-- Data -->
+                    <div class="col-lg-4 col-md-6" *ngFor="let donation of donations">
+                        <div class="sigma_product style-8">
+                            <div class="sigma_product-thumb">
+                                <a> <img src="../../../assets/img/donationAssociation/{{donation.imageDonation}}"
+                                        [alt]="donation.imageDonation" height="140" width="400"></a>
+
                             </div>
+                            <div class="sigma_product-body">
 
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                   
-                                   <input type="text" class="form-control" id="donationType" [(ngModel)]="donation.donationType"
-                                   placeholder="Type" name="donationType">
+                                <h5 class="sigma_product-title"> <a>{{donation.nameDonation}}</a> </h5>
+                                <div class="sigma_rating">
+                                    <i>Déjà {{donation.nbAnneeAssociation}} années</i>
                                 </div>
-                           </div>
-
-                           <div class="col-lg-6">
-                                <div class="form-group">
-                               
-                                    <input type="text" class="form-control" id="quantityDonation" [(ngModel)]="donation.quantityDonation"
-                                     placeholder="Quantity" name="quantityDonation">
+                                <div class="sigma_product-price">
+                                    <span>{{donation.quantityDonation}}$</span>
+                                    <!--<span *ngIf="item.discount">{{item.price | number:'1.2-2'}}$</span>-->
                                 </div>
-                           </div>
+                                <!-- Cart 
+                            <button 
+                                class="sigma_btn btn-sm" (click)="onOpenModal(association, 'details')">View More
+                            </button> -->
+                                <button type="button" class="btn btn-success btn-link btn-sm btn-just-icon"
+                                    (click)="deleteDonation(donation.idDonation)">
+                                    <i class="material-icons">Delete</i>
+                                </button>
 
-                           <div class="col-lg-6">
-                             <div class="form-group">
-                           
-                                <input type="text" class="form-control" id="imageDonation" [(ngModel)]="donation.imageDonation"
-                                 placeholder="Image" name="imageDonation">
-                             </div>
-                           </div>
 
-                           
-
-                        </div>
-                        
-                    </div>
-
-                    <div  class="form-block">
-                        <div  class="row">
-
-                            <div  class="col-12">
-                                <div  class="form-group">
-                                    <textarea 
-                                        class="form-control" id="descriptionDonation"
-                                        placeholder="Description" name="descriptionDonation" [(ngModel)]="donation.descriptionDonation">
-                                    </textarea>
-                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="d-flex align-items-center mt-2"><input 
-                            formcontrolname="condition" id="checkbox" type="checkbox" value="accept"
-                            ng-reflect-name="condition" class="ng-untouched ng-pristine ng-invalid"><label
-                             class="mb-0" for="checkbox">I accept <a 
-                                href="#">Terms</a> and <a  href="#">conditions</a> and general
-                            policy</label>
-                    </div>
-
-
-                    <!--Button-->
-                    <li class="d-flex align-items-center justify-content-between">
-                        <button
-                            class="sigma_btn btn-block btn-sm mt-4" type="submit">
-                            Confirm and Pay <i  class="fal fa-arrow-right ml-3"></i>
-                        </button>
-                    </li>
-
-                   
-
+                    <!-- Data -->
                 </div>
-                </form>
 
 
 

@@ -26,6 +26,9 @@ import { AssociationsComponent } from 'src/app/associations/associations.compone
 import { RequestComponent } from 'src/app/request/request.component';
 import { AddDonationComponent } from 'src/app/donation/add-donation/add-donation.component';
 import { MyDonationsComponent } from 'src/app/donation/my-donations/my-donations.component';
+import { ContactDonationComponent } from 'src/app/donation/contact-donation/contact-donation.component';
+import { DonationsGiftComponent } from 'src/app/donation/donations-gift/donations-gift.component';
+import { CollectComponent } from 'src/app/donation/collect/collect.component';
 
 
 
@@ -49,7 +52,10 @@ import { MyDonationsComponent } from 'src/app/donation/my-donations/my-donations
     AssociationsComponent,
     RequestComponent,
     AddDonationComponent,
-    MyDonationsComponent
+    MyDonationsComponent,
+    ContactDonationComponent,
+    DonationsGiftComponent,
+    CollectComponent
   ],
   imports: [
     CommonModule,
