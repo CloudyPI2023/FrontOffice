@@ -34,6 +34,7 @@ export class AssociationComponent implements OnInit {
       });
   }
 
+
   
   public onOpenModal(association: Association, mode: string): void {
     const container = document.getElementById('main-container');
@@ -42,8 +43,8 @@ export class AssociationComponent implements OnInit {
     button.style.display = 'none';
     button.setAttribute('data-toggle', 'modal');
    
-    if (mode === 'detail') {
-  
+    if (mode === 'details') {
+       this.detailsAssociation = association;
       button.setAttribute('data-target', '#detailAssociationModal');
     }
   

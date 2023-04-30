@@ -6,6 +6,8 @@ import { AssociationComponent } from './association/association.component';
 import { AssociationDetailComponent } from './association/association-detail/association-detail.component';
 import { AssociationsComponent } from './associations/associations.component';
 import { RequestComponent } from './request/request.component';
+import { AddDonationComponent } from './donation/add-donation/add-donation.component';
+import { MyDonationsComponent } from './donation/my-donations/my-donations.component';
 
 const routes: Routes = [
   // Home
@@ -39,6 +41,8 @@ const routes: Routes = [
   //Donations 
   // Clinics
   { path: 'donation', component:DonationComponent  },
+  { path: 'addDonation', component:AddDonationComponent },
+  { path: 'myDonations', component:MyDonationsComponent },
   { path: 'association',component:AssociationComponent },
   { path: 'association/:idAssociation',component:AssociationDetailComponent },
   { path: 'associations',component:AssociationsComponent },

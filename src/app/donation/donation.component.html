@@ -1,146 +1,112 @@
 <app-header-two></app-header-two>
-<!--P1-->
-<div class="sigma_banner light-bg style-10 bg-cover">
-    <img src="assets/img/tr.png" class="tr" alt="img">
-    <img src="assets/img/br.png" class="br" alt="img">
-    <img src="assets/img/bl.png" class="bl" alt="img">
-    <div class="banner-slider-inner">
-        <div class="sigma_banner-text">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <h5 class="primary-color">Markets & Resources</h5>
-                        <h1 class="title">
-                            Find The Best Doctor near By You
-                        </h1>
-                        <div class="banner-links d-flex align-items-center">
-                            <a routerLink="/contact" class="sigma_btn">Get a Quote</a>
-                            <a routerLink="/about" class="sigma_btn light ml-4">Read more</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="sigma_banner-image mt-5 mt-lg-0">
-                            <img src="assets/img/home-2/540x540.jpg" alt="img">
-                        </div>
-                    </div>
+<!--breadcrumbs-->
+
+    <div class="sigma_subheader style-5 bg-gray">
+        <div class="container">
+            
+                <div class="sigma_subheader-inner">
+                    <h1>Our Donations</h1>
                 </div>
-            </div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a routerLink="/" class="btn-link">Esprit</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">PharmaLIFE</li>
+                </ol>
+           
         </div>
+        <img src="assets/img/subheader-br.png" class="br" alt="subheader">
+        <img src="assets/img/subheader-bl.png" class="bl" alt="subheader">
+        <img src="assets/img/subheader-tr.png" class="tr" alt="subheader">
     </div>
-</div>
 
+<!--data-->
 
-
-
-
-
-<!--P2-->
-<div class="container">
-    <div class="sigma_service-wrapper style-18 margin-negative">
-        <div class="section-title flex-title">
-            <h3 class="title mb-0">Praesent tempor dictum tellus ut molestie</h3>
-            <a class="sigma_btn mt-3 mt-sm-0">
-                Get a Quote
-                <i class="fal fa-arrow-right ml-3"></i>
-            </a>
-        </div>
-        <div class="row">
-            <!-- Data -->
-            <div class="col-lg-4 col-md-6">
-                <div class="sigma_service style-18">
-                    <div class="sigma_service-thumb">
-                        <i><img src="../../../assets/img/logo.png"></i>
-                    </div>
-                    <div class="sigma_service-body">
-                        <h5>
-                            <a>Events</a>
-                        </h5>
-                        <p>go to the list of events</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="sigma_service style-18">
-                    <div class="sigma_service-thumb">
-                        <i><img src="../../../assets/img/logo.png"></i>
-                    </div>
-                    <div class="sigma_service-body">
-                        <h5>
-                            <a>Donations</a>
-                        </h5>
-                        <p>go to the list of Donations</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="sigma_service style-18">
-                    <div class="sigma_service-thumb">
-                        <i><img src="../../../assets/img/logo.png"></i>
-                    </div>
-                    <div class="sigma_service-body">
-                        <h5>
-                            <a>Articles</a>
-                        </h5>
-                        <p>go to the list of articles</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Data -->
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<!--*************************************************************************************************************************************-->
-
-<div class="section section-padding">
+<div class="section section-padding pt-0">
     <div class="container">
-        <div class="section-title centered">
-            <span class="subtitle">Best Donations</span>
-            <h3 class="title mb-0">For Donations</h3>
-        </div>
+        
         <div class="row">
-            <!-- Data -->
-            <div class="col-lg-3 col-md-6" *ngFor="let donation of donations">
-                <div class="sigma_product style-6">
-                    <div class="sigma_product-thumb">
-                        <!--<a routerLink="/product-single/{{item.id}}"><img [src]="item.image[0]" [alt]="item.title"></a>-->
-                        <a><img src="../../../assets/img/donationAssociation/{{donation.imageDonation}}" [alt]="donation.imageDonation" height="248" width="199"></a>
-                    </div>
-                    <div class="sigma_product-body">
-                        <h5 class="sigma_product-title"> <a >{{donation.nameDonation}}</a>
-                        </h5>
-                        <div class="sigma_rating">
-                           <!-- <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="true">
-                                <ng-template let-fill="fill" let-index="index">
-                                    <i class="fal fa-star" [class.fas]="fill === 100"></i>
-                                </ng-template>
-                            </ngb-rating>--> <i>{{donation.quantityDonation}}</i>
-                        </div>
-                        <div class="sigma_product-price">
-                            <span >{{donation.dateDonation}}$</span>
-                            <!--<span>{{item.price * (100 - item.discount) / 100 | number:'1.2-2'}}$</span>
-                            <span *ngIf="item.discount">{{item.price | number:'1.2-2'}}$</span>-->
-                        </div>
-                        <!-- Cart -->
-                        <a href="javascript:void(0)" 
-                            class="sigma_btn btn-sm">Add to Cart
-                        </a>
-                        
-                        <!-- Quick view -->
-                        <a href="javascript:void(0)" class="sigma_btn btn-sm light"
-                           >Quick View </a>
-                    </div>
+            <div class="col-12">
+                <div class="sigma_tab-item style-2 with-dots">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a >
+                                <span class="pulsive-dot"></span>
+                                All
+                            </a>
+                            <a >
+                                <span class="pulsive-dot"></span>
+                                Events
+                            </a>
+                            <a >
+                                <span class="pulsive-dot"></span>
+                                MyDonations
+                            </a>
+                            <a >
+                                <span class="pulsive-dot"></span>
+                                New Donation
+                            </a>
+                            
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <!-- Data -->
+            <div class="tab-content col-12" id="myTabContent">
+                <div class="row">
+                    <!-- Data -->
+                    <div class="col-lg-3 col-md-6" *ngFor="let donation of donations">
+                        <div class="sigma_product style-8">
+                            <div class="sigma_product-thumb">
+                               <!--<a routerLink="/product-single/{{item.id}}"><img [src]="item.image[0]"
+                                        [alt]="item.title"></a> -->
+                                        <a > <img src="../../../assets/img/donationAssociation/{{donation.imageDonation}}" [alt]="donation.imageDonation" height="140" width="400"></a>
+                                <div class="sigma_product-controls">
+                                    <!-- Wishlist -->
+                                    <a 
+                                         placement="top"
+                                        ngbTooltip="Add To Wishlist"> <i class="far fa-heart"></i> </a>
+                                    <a  class="active" 
+                                        placement="top"
+                                        ngbTooltip="Remove To Wishlist"> <i class="far fa-heart"></i> </a>
+                                    <!-- Cart -->
+                                    <a href="javascript:void(0)"
+                                        placement="top" ngbTooltip="Add To Cart"> <i class="far fa-shopping-basket"></i>
+                                    </a>
+                                
+                                    <!-- Quick view -->
+                                   
+                                    <a href="javascript:void(0)" placement="top" ngbTooltip="Quick View"> <i
+                                        class="far fa-eye" ></i> </a>
+                                          
+                                </div>
+                            </div>
+                            <div class="sigma_product-body">
+                                <h5 class="sigma_product-title"> <a
+                                        >{{donation.nameDonation}}</a> </h5>
+                                <div class="sigma_rating">
+                                    <i>Déjà {{donation.nbAnneeAssociation}} années</i>
+                                </div>
+                                <div class="sigma_product-price">
+                                    <span>{{donation.quantityDonation}}$</span>
+                                    <!--<span *ngIf="item.discount">{{item.price | number:'1.2-2'}}$</span>-->
+                                </div> 
+                                <!-- Cart 
+                                <button 
+                                    class="sigma_btn btn-sm" (click)="onOpenModal(association, 'details')">View More
+                                </button> -->
+                                <button type="button" class="btn btn-success btn-link btn-sm btn-just-icon">
+                                    <i class="material-icons" (click)="onOpenModal(null!, 'add')">TAKE</i>
+                                </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- Data -->
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<!-- Shop Modal -->
 
 
 
@@ -148,13 +114,7 @@
 
 
 
-
-
-
-
-
-
-
-<!--**************************************************************************************************************************************-->
-
+<!--footer-->
 <app-footer></app-footer>
+
+

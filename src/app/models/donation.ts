@@ -2,7 +2,7 @@ import { User } from "./user";
 
 export class Donation {
      idDonation: number;
-     nameDonation: string;
+     nameDonation: string; 
      descriptionDonation: string;
      quantityDonation: number;
      imageDonation: string;

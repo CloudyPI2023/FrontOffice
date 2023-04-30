@@ -24,6 +24,8 @@ import { DonationComponent } from 'src/app/donation/donation.component';
 import { AssociationDetailComponent } from 'src/app/association/association-detail/association-detail.component';
 import { AssociationsComponent } from 'src/app/associations/associations.component';
 import { RequestComponent } from 'src/app/request/request.component';
+import { AddDonationComponent } from 'src/app/donation/add-donation/add-donation.component';
+import { MyDonationsComponent } from 'src/app/donation/my-donations/my-donations.component';
 
 
 
@@ -45,7 +47,9 @@ import { RequestComponent } from 'src/app/request/request.component';
     DonationComponent,
     AssociationDetailComponent,
     AssociationsComponent,
-    RequestComponent
+    RequestComponent,
+    AddDonationComponent,
+    MyDonationsComponent
   ],
   imports: [
     CommonModule,

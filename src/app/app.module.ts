@@ -13,6 +13,8 @@ import { DonationComponent } from './donation/donation.component';
 import { AssociationDetailComponent } from './association/association-detail/association-detail.component';
 import { AssociationsComponent } from './associations/associations.component';
 import { RequestComponent } from './request/request.component';
+import { MyDonationsComponent } from './donation/my-donations/my-donations.component';
+
 
 @NgModule({
   declarations: [
