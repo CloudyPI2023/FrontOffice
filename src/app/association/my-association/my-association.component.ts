@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Association } from 'src/app/models/association';
+import { AssociationService } from '../association.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-association',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyAssociationComponent implements OnInit {
 
-  constructor() { }
+  associations: Association[]; 
+
+  constructor(private associationService: AssociationService,
+    private router:Router) { } 
 
   ngOnInit(): void {
+    this.getAssociations(); 
+  }
+
+  private getAssociations(){
+    this.associationService.getAssociationList().subscribe(data => {
+      this.associations = data;
+    });
+  }
+
+  deleteAssociation(idAssociation: number){
+    this.associationService.deleteAssociation(idAssociation).subscribe(data =>{
+      console.log(data);
+      this.getAssociations();
+    })
   }
 
 }
