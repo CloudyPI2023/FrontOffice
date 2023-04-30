@@ -3,18 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { RegistrationRoutingModule } from './registration-routing.module';
 import { SharedModule } from '../../shared/shared.module';
-import { ContentComponent } from './content/content.component';
 import { RegistrationComponent } from './registration.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
-    ContentComponent,
+    ,
   //  RegistrationComponent
   ],
   imports: [
     CommonModule,
     RegistrationRoutingModule,
-    SharedModule
+    SharedModule,
+    MatSelectModule
   ]
 })
 export class RegistrationModule { }

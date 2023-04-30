@@ -53,10 +53,12 @@ const routes: Routes = [
   { path: 'contact', loadChildren: () => import('./components/pages/contact/contact.module').then(m => m.ContactModule), data: { breadcrumb: "Contact Us" } },
   // Extra
   { path: 'error-page', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } },
+ 
   { path: 'registration',component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path : 'forgetPassword', component:ForgetPasswordComponent},
   { path: 'resetPassword', component: ResetPasswordComponent},
+  
   { path: '**', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } }
 ];
 

@@ -96,7 +96,7 @@
 						  <div class="col-sm-6">
 							<div >
 								<label  for="inputState" class="form-label" style="color: black;">Role</label>
-								<select id="role" name="role" [(ngModel)]="user.role">
+								<select id="role" name="role" [(ngModel)]="user.role" style="background-color: transparent;">
 								<option value="Patient">Patient</option>
 								<option value="Donator">Donator</option>
 								<option value="AssociationMember">Association Member</option>
@@ -104,13 +104,17 @@
 							  </select>
 							</div>
 						  </div>
-						  <div class="col-sm-6 ">
+						  
+
+
+
+						 <!-- <div class="col-sm-6 ">
 							<div class="form-group">
 								<label for="birthDate" style="color: black;">Image</label>
 								<input type="file" accept="image/*" (change)="onFileSelected($event)" id="image_user" name="image_user" [(ngModel)]="user.image_user">
 								<img [src]="imgURL" height="200" *ngIf="imgURL">
 							</div> 
-						</div>
+						</div>-->
 	  
 					</div>
 					<br>

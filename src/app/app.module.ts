@@ -9,12 +9,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { RegistrationComponent } from './components/pages/registration/registration.component';
 import { ForgetPasswordComponent } from './components/pages/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './components/pages/reset-password/reset-password.component';
 import { LoginComponent } from './components/pages/login/login.component';
+
+
 import { SharedModule } from './components/shared/shared.module';
 import { HeaderComponent } from './components/shared/header/header.component';
+
 
 
 @NgModule({
@@ -34,6 +38,8 @@ import { HeaderComponent } from './components/shared/header/header.component';
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
+    
+
     
   ],
   providers: [],

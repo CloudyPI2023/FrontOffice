@@ -20,7 +20,7 @@ import { ClinicSidebarComponent } from './clinic-sidebar/clinic-sidebar.componen
 import { SmallCartComponent } from './small-cart/small-cart.component';
 import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
 //import { LoginComponent } from '../pages/login/login.component';
-
+import { JwtServiceService } from '../services/jwt-service.service';
 
 
 @NgModule({
@@ -48,6 +48,7 @@ import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
     SlickCarouselModule,
     NgxSliderModule
   ],
+  providers : [JwtServiceService],
   exports:[
     HeaderComponent,
     HeaderTwoComponent,
