@@ -15,6 +15,8 @@ import { MyDonationsComponent } from './donation/my-donations/my-donations.compo
 import { ContactDonationComponent } from './donation/contact-donation/contact-donation.component';
 import { DonationsGiftComponent } from './donation/donations-gift/donations-gift.component';
 import { CollectComponent } from './donation/collect/collect.component';
+import { MyAssociationComponent } from './association/my-association/my-association.component';
+import { AddAssociationComponent } from './association/add-association/add-association.component';
 
 
 
