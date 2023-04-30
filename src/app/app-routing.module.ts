@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { DonationComponent } from './donation/donation.component';
 import { Association } from './models/association';
 import { AssociationComponent } from './association/association.component';
-import { AssociationDetailComponent } from './association/association-detail/association-detail.component';
-import { AssociationsComponent } from './associations/associations.component';
 import { RequestComponent } from './request/request.component';
 import { AddDonationComponent } from './donation/add-donation/add-donation.component';
 import { MyDonationsComponent } from './donation/my-donations/my-donations.component';
@@ -47,8 +45,7 @@ const routes: Routes = [
   { path: 'addDonation', component:AddDonationComponent },
   { path: 'myDonations', component:MyDonationsComponent },
   { path: 'association',component:AssociationComponent },
-  { path: 'association/:idAssociation',component:AssociationDetailComponent },
-  { path: 'associations',component:AssociationsComponent },
+
   { path: 'myRequests',component:RequestComponent },
   { path: 'contactDonations',component:ContactDonationComponent },
   { path: 'donationGifts',component:DonationsGiftComponent },

@@ -21,8 +21,6 @@ import { SmallCartComponent } from './small-cart/small-cart.component';
 import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
 import { AssociationComponent } from 'src/app/association/association.component';
 import { DonationComponent } from 'src/app/donation/donation.component';
-import { AssociationDetailComponent } from 'src/app/association/association-detail/association-detail.component';
-import { AssociationsComponent } from 'src/app/associations/associations.component';
 import { RequestComponent } from 'src/app/request/request.component';
 import { AddDonationComponent } from 'src/app/donation/add-donation/add-donation.component';
 import { MyDonationsComponent } from 'src/app/donation/my-donations/my-donations.component';
@@ -48,8 +46,6 @@ import { CollectComponent } from 'src/app/donation/collect/collect.component';
     ShopSidebarComponent,
     AssociationComponent,
     DonationComponent,
-    AssociationDetailComponent,
-    AssociationsComponent,
     RequestComponent,
     AddDonationComponent,
     MyDonationsComponent,

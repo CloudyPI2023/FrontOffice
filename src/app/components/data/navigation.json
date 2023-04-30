@@ -105,22 +105,17 @@
             {
                 "id": 4.1,
                 "link": "/donation",
-                "linkText": "donation"
+                "linkText": "Donations"
             },
             {
                 "id": 4.2,
                 "link": "/association",
-                "linkText": "association"
+                "linkText": "Associations"
             },
             {
                 "id": 4.3,
                 "link": "/",
                 "linkText": "Requests"
-            },
-            {
-                "id": 4.4,
-                "link": "/",
-                "linkText": "associations"
             }
         ]
     },
