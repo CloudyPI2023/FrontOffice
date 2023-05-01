@@ -4,6 +4,7 @@ import { RegistrationComponent } from './components/pages/registration/registrat
 import { LoginComponent } from './components/pages/login/login.component';
 import { ForgetPasswordComponent } from './components/pages/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './components/pages/reset-password/reset-password.component';
+import { UserProfileComponent } from './components/pages/user-profile/user-profile.component';
 
 const routes: Routes = [
   // Home
@@ -58,7 +59,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path : 'forgetPassword', component:ForgetPasswordComponent},
   { path: 'resetPassword', component: ResetPasswordComponent},
-  
+  { path: 'userProfile', component: UserProfileComponent ,data: { breadcrumb: "User Profile" } },
+
   { path: '**', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } }
 ];
 

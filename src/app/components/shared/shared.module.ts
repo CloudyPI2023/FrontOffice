@@ -21,7 +21,7 @@ import { SmallCartComponent } from './small-cart/small-cart.component';
 import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
 //import { LoginComponent } from '../pages/login/login.component';
 import { JwtServiceService } from '../services/jwt-service.service';
-
+import { UserProfileComponent } from '../pages/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { JwtServiceService } from '../services/jwt-service.service';
     ClinicSidebarComponent,
     SmallCartComponent,
     ShopSidebarComponent,
-  //  LoginComponent
+  UserProfileComponent
   ],
   imports: [
     CommonModule,

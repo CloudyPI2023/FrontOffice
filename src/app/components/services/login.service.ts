@@ -26,7 +26,7 @@ export class LoginService {
  login(formData:any) {
      console.log(formData);
     let  options = {
-      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+      headers: new HttpHeaders().set('content-Type', 'application/x-www-form-urlencoded')
     };
      const payload = new HttpParams()
   .set('username', formData.email)

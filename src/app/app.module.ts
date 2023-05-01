@@ -18,6 +18,7 @@ import { LoginComponent } from './components/pages/login/login.component';
 
 import { SharedModule } from './components/shared/shared.module';
 import { HeaderComponent } from './components/shared/header/header.component';
+import { UserProfileComponent } from './components/pages/user-profile/user-profile.component';
 
 
 
@@ -28,6 +29,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
     ForgetPasswordComponent,
     ResetPasswordComponent,
     LoginComponent
+    
   ],
   imports: [
     BrowserModule,
