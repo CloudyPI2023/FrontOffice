@@ -25,6 +25,8 @@ export class AssociationComponent implements OnInit {
     });
    
   } 
+  
+  ////////////////////////mathezouch
 
 
   public OnDetailsAssociation(idAssociation: number){

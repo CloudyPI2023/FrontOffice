@@ -11,6 +11,8 @@ import { DonationsGiftComponent } from './donation/donations-gift/donations-gift
 import { CollectComponent } from './donation/collect/collect.component';
 import { AddAssociationComponent } from './association/add-association/add-association.component';
 import { MyAssociationComponent } from './association/my-association/my-association.component';
+import { AddRequestComponent } from './association-requests/add-request/add-request.component';
+import { AssociationRequestsComponent } from './association-requests/association-requests.component';
 
 const routes: Routes = [
   // Home
@@ -48,11 +50,18 @@ const routes: Routes = [
   { path: 'myDonations', component:MyDonationsComponent },
   { path: 'association',component:AssociationComponent },
   { path: 'addAssociation',component:AddAssociationComponent },
+
+  { path: 'addRequest',component:AddRequestComponent },
+  { path: 'myRequest',component:AssociationRequestsComponent },
+  
   { path: 'myAssociation',component:MyAssociationComponent },
   { path: 'myRequests',component:RequestComponent },
   { path: 'contactDonations',component:ContactDonationComponent },
   { path: 'donationGifts',component:DonationsGiftComponent },
   { path: 'collectDonations',component: CollectComponent},
+
+
+
 
   // Doctors
   { path: 'doctor/cat/:catId', loadChildren: () => import('./components/pages/doctor-grid/doctor-grid.module').then(m => m.DoctorGridModule), data: { breadcrumb: "Doctor Grid" } },
