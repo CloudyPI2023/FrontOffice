@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Product } from '../../models/product';
+import { Product } from '../../../Models/ProductAndGiftManagement/product';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,7 +12,11 @@ export class ProductService {
   constructor(private httpClient: HttpClient) { }
 
   getAllProductsNotExpired(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(`${this.baseURL}` + "/all-productsFront");
+    return this.httpClient.get<Product[]>(`${this.baseURL}` + "/all-productsNotExpired");
+  }
+
+  getTop3Prodcuts(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(`${this.baseURL}` + "/top3Products");
   }
   OnDetailsProduct(idProduct: number): Observable<Product> {
     return this.httpClient.get<Product>(`${this.baseURL}` + "/retrieve-product/" + `${idProduct}`);
@@ -27,8 +31,7 @@ export class ProductService {
   }
 
   deleteProduct(id: number): Observable<Object> {
-    const url = `${this.baseURL}/${id}`;
-    return this.httpClient.delete(url);
+    
+    return this.httpClient.delete("http://localhost:8082/PharmaLife/Product/delete-product/"+id);
   }
-
 }

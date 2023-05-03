@@ -5,18 +5,19 @@ import { Reclamation } from "./reclamation";
 
 
 export class Product {
-    idProduct:number | undefined;;
-    referenceProduct:String | undefined;;
-    nameProduct:String | undefined;;
-    imageProduct:String | undefined;;
-    descriptionProduct:String | undefined;;
-    priceProduct:number | undefined;;
-    quantityProduct:number | undefined;;
-    expired:number | undefined;;
-    expirationDateProduct:Date | undefined;;
-    userProduct:User[] | undefined;;
-    categoryProduct:Category[] | undefined;;
-    ReclamationsProduct:Reclamation[] | undefined;;
+    public idProduct!:number ;
+    public referenceProduct!:String;
+    public nameProduct!:String;
+    public imageProduct!:String;
+    public descriptionProduct!:String ;
+    public priceProduct!:number ;
+    public quantityProduct!:number;
+    public expired!:number;
+    public  expirationDateProduct!:Date ;
+    public userProduct!:User[] ;
+    public categoryProduct!:Category[] ;
+    public ReclamationsProduct!:Reclamation[];
+    public creationDate!:Date;
 
     /*constructor( idProduct:number,referenceProduct:String,nameProduct:String, imageProduct:String, descriptionProduct:String,
         priceProduct:number,quantityProduct:number,expired:number,expirationDateProduct:Date,

@@ -1,0 +1,40 @@
+<app-header-two></app-header-two>
+<div class="sigma_subheader style-5 bg-gray">
+    <div class="container">
+
+        <div class="sigma_subheader-inner">
+            <h1>Available gifts</h1>
+        </div>
+
+
+
+    </div>
+    <img src="assets/img/subheader-br.png" class="br" alt="subheader">
+    <img src="assets/img/subheader-bl.png" class="bl" alt="subheader">
+    <img src="assets/img/subheader-tr.png" class="tr" alt="subheader">
+</div>
+<div class="section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="sigma_service-thumb">
+                    <i class="flaticon-heartbeat"  >
+                    </i>
+                    <div class="sigma_service-body" *ngFor="let item of mygifts">
+                        <h5>
+                            <a>Descprition:{{item.description}}</a>
+                        </h5>
+                        <div >
+                     
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<app-footer></app-footer>

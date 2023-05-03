@@ -104,7 +104,7 @@
         "submenu": [
             {
                 "id": 5.1,
-                "link": "product-management",
+                "link": "/product-management",
                 "linkText": "Our products"
             },
             {
@@ -114,11 +114,6 @@
             },
             {
                 "id": 5.3,
-                "link": "/category-management",
-                "linkText": "Pour drugs categories"
-            },
-            {
-                "id": 5.4,
                 "link": "/reclamation-management",
                 "linkText": "My reclamations"
             }
