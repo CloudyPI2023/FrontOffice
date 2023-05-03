@@ -31,6 +31,7 @@ import { AddAssociationComponent } from 'src/app/association/add-association/add
 import { MyAssociationComponent } from 'src/app/association/my-association/my-association.component';
 import { AssociationRequestsComponent } from 'src/app/association-requests/association-requests.component';
 import { AddRequestComponent } from 'src/app/association-requests/add-request/add-request.component';
+import { ListRequestsComponent } from 'src/app/association-requests/list-requests/list-requests.component';
 
 
 
@@ -48,6 +49,7 @@ import { AddRequestComponent } from 'src/app/association-requests/add-request/ad
     ClinicSidebarComponent,
     SmallCartComponent,
     ShopSidebarComponent,
+    
     AssociationComponent,
     DonationComponent,
     RequestComponent,
@@ -59,7 +61,8 @@ import { AddRequestComponent } from 'src/app/association-requests/add-request/ad
     AddAssociationComponent,
     MyAssociationComponent,
     AssociationRequestsComponent,
-    AddRequestComponent
+    AddRequestComponent,
+    ListRequestsComponent
   ],
   imports: [
     CommonModule,

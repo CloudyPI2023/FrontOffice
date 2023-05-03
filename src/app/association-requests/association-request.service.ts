@@ -10,7 +10,6 @@ export class AssociationRequestService {
 
   url : string = 'http://localhost:8082/PharmaLife/requests'; 
 
-
   constructor(private httpClient: HttpClient) { }
 
 
@@ -23,5 +22,19 @@ export class AssociationRequestService {
     return this.httpClient.post(this.url + '/addRequest', request);
   }
 
+  
+  getListRequestByIdAssociation(idAssociation: number): Observable<Request>{
+    return this.httpClient.get<Request>(`${this.url}/getMyRequests/${idAssociation}`);
+  }
 
+  //take donation button
+  assignRequestToDonation(request: Request, idDonation: number, idAssociation: number): Observable<Request> {
+    return this.httpClient.post<Request>(`${this.url}/assignRequestToDonation/${idDonation}/${idAssociation}`, request);
+    //console.log(this.httpClient.post<Request>(`${this.url}/assignRequestToDonation/${idDonation}/${idAssociation}`, request));
+  }
+
+  //add request button
+  assignRequestToDonationInf3(request: Request, idAssociation: number): Observable<Request> {
+    return this.httpClient.post<Request>(`${this.url}/assignRequestToDonationInf3/${idAssociation}`, request);
+  }
 }

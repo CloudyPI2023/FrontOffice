@@ -17,8 +17,8 @@
             <li class="breadcrumb-item">
                 <a routerLink="/addAssociation" class="btn-link">New Association</a>
             </li>
-            
-           
+
+
         </ol>
 
 
@@ -51,17 +51,18 @@
                             </li>
                             <li _ngcontent-sdw-c4="" ng-reflect-_id="2" class="nav-item">
                                 <a _ngcontent-sdw-c4="" href="" ngbnavlink="" id="ngb-nav-1" class="nav-link "
-                                    role="tab" aria-selected="false" aria-disabled="false" routerLink="/addAssociation">New
+                                    role="tab" aria-selected="false" aria-disabled="false"
+                                    routerLink="/addAssociation">New
                                     Association
                                     <i _ngcontent-sdw-c4="" class="fal fa-chevron-right"></i></a><!---->
                             </li>
                             <li _ngcontent-sdw-c4="" ng-reflect-_id="3" class="nav-item"><a _ngcontent-sdw-c4="" href=""
                                     ngbnavlink="" id="ngb-nav-2" class="nav-link" role="tab" aria-selected="false"
-                                    aria-disabled="false" routerLink="/"> My Requests <i
-                                        _ngcontent-sdw-c4="" class="fal fa-chevron-right"></i>
+                                    aria-disabled="false" routerLink="/"> My Requests <i _ngcontent-sdw-c4=""
+                                        class="fal fa-chevron-right"></i>
                                 </a><!----></li>
-                            <li ng-reflect-_id="4" class="nav-item active"><a _ngcontent-sdw-c4="" href=""
-                                    ngbnavlink="" id="ngb-nav-3" class="nav-link active" role="tab" aria-selected="false"
+                            <li ng-reflect-_id="4" class="nav-item active"><a _ngcontent-sdw-c4="" href="" ngbnavlink=""
+                                    id="ngb-nav-3" class="nav-link active" role="tab" aria-selected="false"
                                     aria-disabled="false" routerLink="/addRequest"> New Request <i _ngcontent-sdw-c4=""
                                         class="fal fa-chevron-right"></i>
                                 </a><!----></li>
@@ -95,27 +96,13 @@
                                     <div class="form-group">
 
                                         <input type="text" class="form-control" id="nameRequest"
-                                            [(ngModel)]="request.nameRequest" placeholder="Request Name"
+                                            [(ngModel)]="myRequest.nameRequest" placeholder="Request Name"
                                             name="nameRequest">
                                     </div>
                                 </div>
 
 
 
-                                <div class="form-group col-xl-12">
-
-                                    <!--<label>Association <span
-                                            class="text-danger">*</span>
-                                    </label>-->
-                                           
-                                    <select class="form-control"  id="association"  [(ngModel)]="request.association" name="association">
-                                      
-                                        <option *ngFor="let ass of associationList">
-                                            {{ass.associationName}}
-                                            </option>
-                                    
-                                    </select>
-                                </div>
 
                                 <!--<div class="input_box">
                 <select name="association" class="form-control">
@@ -127,7 +114,7 @@
                 </div>-->
 
 
-                               
+
 
 
                                 <div class="form-group col-xl-12">
@@ -135,16 +122,17 @@
                                     <!--<label>Type <span
                                             class="text-danger">*</span>
                                     </label>-->
-                                           
-                                    <select class="form-control"  id="requestType"  [(ngModel)]="request.requestType" name="requestType" placeholder="select Type">
-                                      
+
+                                    <select class="form-control" id="requestType" [(ngModel)]="myRequest.requestType"
+                                        name="requestType" placeholder="select Type">
+
                                         <option value="Money" ng-reflect-value="Money">
                                             Money</option>
                                         <option value="Drugs" ng-reflect-value="Drugs">Drugs
                                         </option>
                                         <option value="Materials" ng-reflect-value="Materials">Materials
                                         </option>
-                                    
+
                                     </select>
                                 </div>
 
@@ -155,14 +143,13 @@
                         </div>
 
                         <div class="form-block">
-                            
+
                             <div class="row">
 
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="descriptionRequest"
-                                            placeholder="Description" name="descriptionRequest"
-                                            [(ngModel)]="request.descriptionRequest">
+                                        <textarea class="form-control" id="descriptionRequest" placeholder="Description"
+                                            name="descriptionRequest" [(ngModel)]="myRequest.descriptionRequest">
                                     </textarea>
                                     </div>
                                 </div>

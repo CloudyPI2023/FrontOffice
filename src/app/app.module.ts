@@ -19,6 +19,7 @@ import { MyAssociationComponent } from './association/my-association/my-associat
 import { AddAssociationComponent } from './association/add-association/add-association.component';
 import { AssociationRequestsComponent } from './association-requests/association-requests.component';
 import { AddRequestComponent } from './association-requests/add-request/add-request.component';
+import { ListRequestsComponent } from './association-requests/list-requests/list-requests.component';
 
 
 

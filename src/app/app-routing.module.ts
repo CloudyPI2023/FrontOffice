@@ -13,6 +13,7 @@ import { AddAssociationComponent } from './association/add-association/add-assoc
 import { MyAssociationComponent } from './association/my-association/my-association.component';
 import { AddRequestComponent } from './association-requests/add-request/add-request.component';
 import { AssociationRequestsComponent } from './association-requests/association-requests.component';
+import { ListRequestsComponent } from './association-requests/list-requests/list-requests.component';
 
 const routes: Routes = [
   // Home
@@ -45,20 +46,26 @@ const routes: Routes = [
 
   //Donations And Association Crud
   
-  { path: 'donation', component:DonationComponent  },
+  { path: 'donation/:idAssociation', component:DonationComponent  },
   { path: 'addDonation', component:AddDonationComponent },
   { path: 'myDonations', component:MyDonationsComponent },
   { path: 'association',component:AssociationComponent },
   { path: 'addAssociation',component:AddAssociationComponent },
 
-  { path: 'addRequest',component:AddRequestComponent },
+  { path: 'addRequest/:idAssociation',component:AddRequestComponent },
+  
   { path: 'myRequest',component:AssociationRequestsComponent },
+  { path: 'listRequests/:idAssociation',   component: ListRequestsComponent },
+ 
+
+  { path: 'listRequests/:idAssociation',   component: ListRequestsComponent },
   
   { path: 'myAssociation',component:MyAssociationComponent },
   { path: 'myRequests',component:RequestComponent },
   { path: 'contactDonations',component:ContactDonationComponent },
   { path: 'donationGifts',component:DonationsGiftComponent },
   { path: 'collectDonations',component: CollectComponent},
+
 
 
 

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./my-association.component.css']
 })
 export class MyAssociationComponent implements OnInit {
-
+  idUser: number = 1;
   associations: Association[]; 
 
   constructor(private associationService: AssociationService,
@@ -20,7 +20,7 @@ export class MyAssociationComponent implements OnInit {
   }
 
   private getAssociations(){
-    this.associationService.getAssociationList().subscribe(data => {
+    this.associationService.getMyAssociationsList(this.idUser).subscribe(data => {
       this.associations = data;
     });
   }
@@ -31,5 +31,13 @@ export class MyAssociationComponent implements OnInit {
       this.getAssociations();
     })
   }
+
+  TakeDonation(idAssociation: number){
+    this.router.navigate(['donation', idAssociation]);
+  }
+  AddRequest(idAssociation: number){
+    this.router.navigate(['addRequest', idAssociation]);
+  }
+
 
 }

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Request } from 'src/app/models/request';
 import { AssociationRequestService } from '../association-request.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Association } from 'src/app/models/association';
 import { AssociationService } from 'src/app/association/association.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-request',
@@ -13,12 +14,15 @@ import { AssociationService } from 'src/app/association/association.service';
 export class AddRequestComponent implements OnInit {
   associationList: Association[];
   request: Request = new Request();
+  idAssociation: number;
+  myRequest: Request = new Request();
 
   constructor(private associationRequestService: AssociationRequestService,private associationService: AssociationService,
-    private router:Router) { } 
+    private route:ActivatedRoute,private router:Router) { } 
 
   ngOnInit(): void {
-    this.getAssociations();
+    this.idAssociation = this.route.snapshot.params['idAssociation']; 
+    this.getAssociations(); 
   }
 
   saveAssociationRequest(){
@@ -36,14 +40,34 @@ export class AddRequestComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.request);
-    this.saveAssociationRequest();
+    this.associationRequestService.assignRequestToDonationInf3(this.myRequest, this.idAssociation).subscribe(
+      (response: Request) => {
+        console.log(response);
+        //this.getAssociations();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 
   private getAssociations(){
     this.associationService.getAssociationList().subscribe(data => {
       this.associationList = data;
     });
+  }
+
+   ////Fonctionnalité avancé
+   public assignRequestToDonationInf3( request: Request,idAssociation: number) {
+    this.associationRequestService.assignRequestToDonationInf3(this.myRequest, this.idAssociation).subscribe(
+      (response: Request) => {
+        console.log(response);
+        //this.getAssociations();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 
 

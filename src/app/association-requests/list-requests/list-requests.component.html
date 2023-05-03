@@ -5,7 +5,7 @@
     <div class="container">
 
         <div class="sigma_subheader-inner">
-            <h1>Add Association</h1>
+            <h1>My Requests</h1>
         </div>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -41,7 +41,7 @@
                     <div  class="sigma_tab-item style-4">
                         <ul  class="nav nav-tabs" id="myTab" ngbnav="" role="tablist">
                             <li ng-reflect-_id="1" class="nav-item">
-                                <a  href="" ngbnavlink="" id="ngb-nav-0" class="nav-link" role="tab"
+                                <a  href="" ngbnavlink="" id="ngb-nav-0" class="nav-link " role="tab"
                                     aria-selected="true" aria-disabled="false" aria-controls="ngb-nav-0-panel"
                                     routerLink="/myAssociation"> My
                                     Associations
@@ -84,44 +84,50 @@
 
                 <div class="row mt-5 mt-lg-0">
                     <!-- Data -->
-                    <div class="col-lg-4 col-md-6" *ngFor="let association of associations">
-                        <div class="sigma_product style-8">
-                            <div class="sigma_product-thumb">
-                                <a> <img src="../../../assets/img/donationAssociation/{{association.logoAssocation}}"
-                                        [alt]="association.logoAssocation" height="140" width="400"></a>
-
-                            </div>
-                            <div class="sigma_product-body">
-
-                                <h5 class="sigma_product-title"> <a>{{association.associationName}}</a> </h5>
-                                <div class="sigma_rating">
-                                    <i>Déjà {{association.nbAnneeAssociation}} années</i>
-                                </div>
-                                <div class="sigma_product-price">
-                                    <span>{{association.countryAssocation}}$</span>
-                                    <!--<span *ngIf="item.discount">{{item.price | number:'1.2-2'}}$</span>-->
-                                </div>
-                                <!-- Cart 
-                            <button 
-                                class="sigma_btn btn-sm" (click)="onOpenModal(association, 'details')">View More
-                            </button> -->
-                           
-                                
-                                <button type="button" class="btn btn-success btn-link btn-sm btn-just-icon"
-                                (click)="listRequests(association.idAssociation)" >
-                                    <i class="material-icons">Requests</i>
-                                </button>  
-                            <!--
-                                <button type="button" class="btn btn-success btn-link btn-sm btn-just-icon"
-                                (click)="deleteAssociation(association.idAssociation)">
-                                <i class="material-icons">Requests</i>
-                               </button>-->
-                            
-                              
-
-                            </div>
+                  
+                        <div class="container">
+                            <!-- Wishlist Table Start -->
+                            <table class="sigma_responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th class="remove-item"></th>
+                                        <th>Created</th>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data -->
+                                    <tr *ngFor="let request of listRequest">
+                                        <td class="remove">
+                                            <button type="button" class="sigma_close close-danger remove-from-cart"
+                                                >
+                                                <span></span>
+                                                <span></span>
+                                            </button>
+                                        </td>
+                                        <td data-title="Total"> <strong>{{request.dateRequest}}</strong> </td>
+                                        <td data-title="Availability">
+                                            <span>{{request.nameRequest}}</span>
+                                            <!--<span class="sigma_product-stock instock" *ngIf="item.stock">In Stock</span>
+                                            <span class="sigma_product-stock outofstock" *ngIf="!item.stock">Out of Stock</span>-->
+                                        </td>
+                                        <td data-title="Total"> <strong>{{request.requestType}}</strong> </td>
+                                       
+                                        <td data-title="Total"> <strong>{{request.statusRequest}}</strong> </td>
+                                        <td data-title="Total"> <strong>{{request.descriptionRequest}}</strong> </td>
+                                    </tr>
+                                    <!-- Data -->
+                                </tbody>
+                            </table>
+                            <!-- Wishlist Table End -->
+                            <!-- Share Wishlist Start -->
+                          
+                            <!-- Share Wishlist End -->
                         </div>
-                    </div>
+                   
                     <!-- Data -->
                 </div>
 
@@ -142,9 +148,17 @@
 
 
 
-
-
-
-
 <!--footer-->
 <app-footer></app-footer>
+
+
+
+
+
+ 
+
+  
+
+
+
+

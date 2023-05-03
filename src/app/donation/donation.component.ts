@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Donation } from '../models/donation';
 import { DonationService } from './donation.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { AssociationRequestService } from '../association-requests/association-request.service';
+import { Request } from '../models/request';
 
 @Component({
   selector: 'app-donation',
@@ -12,12 +14,17 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class DonationComponent implements OnInit {
 
+
+  myRequest: Request = new Request();
+
+  idAssociation: number;
   donations: Donation[]; 
 
-  constructor(private donationService: DonationService,
-    private router:Router) { }
+  constructor(private donationService: DonationService, private associationRequestService : AssociationRequestService,
+    private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
+    this.idAssociation = this.route.snapshot.params['idAssociation']; 
     this.getDonations(); 
   } 
 
@@ -40,6 +47,24 @@ export class DonationComponent implements OnInit {
       }
     );
   }
+  
+
+  ////Fonctionnalité avancé
+  public assignRequestToDonation( request: Request,idDonation: number, idAssociation: number) {
+    this.associationRequestService.assignRequestToDonation(this.myRequest, idDonation, this.idAssociation).subscribe(
+      (response: Request) => {
+        console.log(response);
+        //this.getAssociations();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+
+
+
 
 
    ///les interfaces : crud Donation
