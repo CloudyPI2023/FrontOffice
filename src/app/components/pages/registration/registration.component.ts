@@ -31,7 +31,7 @@ export class RegistrationComponent implements OnInit {
     },error=>{
       alert("Sorry User not registred please try later")
       console.log(error)
-      this.route.navigate(['/login']);
+      //this.route.navigate(['/login']);
 
     
     }

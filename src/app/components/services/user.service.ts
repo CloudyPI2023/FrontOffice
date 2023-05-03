@@ -17,6 +17,7 @@ export class UserService {
   };
 
 
+
     registerUser(user: User): Observable<Object> {
       console.log(user);
       return this.http.post<string>(`${this.apiServerUrl}/registration`,user);
@@ -28,9 +29,12 @@ getUserById(idUser: number): Observable<User>{
   }
 
   public updateUser(user: User): Observable<User> {
-    return this.http.put<User>(`${this.apiServerUrl+"/User/update-User"}`, user, this.options 
-    
-    );
+    return this.http.put<User>(`${this.apiServerUrl+"/User/update-User"}`,user,{
+      headers: new HttpHeaders({
+        'authorization' : `Bearer ${this.token}`,
+        'Content-Type' : 'application/json'
+      })
+    });
   }
 
   

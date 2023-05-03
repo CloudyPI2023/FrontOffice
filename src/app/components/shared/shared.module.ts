@@ -22,7 +22,11 @@ import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
 //import { LoginComponent } from '../pages/login/login.component';
 import { JwtServiceService } from '../services/jwt-service.service';
 import { UserProfileComponent } from '../pages/user-profile/user-profile.component';
-
+import { LoginComponent } from '../pages/login/login.component';
+import { RegistrationComponent } from '../pages/registration/registration.component';
+import { ResetPasswordComponent } from '../pages/reset-password/reset-password.component';
+import { ForgetPasswordComponent } from '../pages/forget-password/forget-password.component'; 
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -37,7 +41,11 @@ import { UserProfileComponent } from '../pages/user-profile/user-profile.compone
     ClinicSidebarComponent,
     SmallCartComponent,
     ShopSidebarComponent,
-  UserProfileComponent
+    UserProfileComponent,
+    RegistrationComponent,
+    ForgetPasswordComponent,
+    ResetPasswordComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,
@@ -46,7 +54,8 @@ import { UserProfileComponent } from '../pages/user-profile/user-profile.compone
     BreadcrumbModule,
     FormsModule,
     SlickCarouselModule,
-    NgxSliderModule
+    NgxSliderModule,
+    ReactiveFormsModule,
   ],
   providers : [JwtServiceService],
   exports:[

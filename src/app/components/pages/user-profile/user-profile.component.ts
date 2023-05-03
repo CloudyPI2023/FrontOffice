@@ -13,7 +13,7 @@ import { UserService } from '../../services/user.service';
 
 export class UserProfileComponent implements OnInit {
   user: User;
-    token = localStorage.getItem('token');
+  token = localStorage.getItem('token');
   decodedToken : any;
   idUser :any ;
   role:any;
@@ -21,7 +21,7 @@ export class UserProfileComponent implements OnInit {
   public editUser?: User;
 
 
-  constructor(private http: HttpClient,private jwtService:JwtServiceService ,private userService: UserService) {}
+  constructor(private jwtService:JwtServiceService ,private userService: UserService) {}
 
   ngOnInit(): void {
     if (this.token) {
@@ -61,12 +61,11 @@ export class UserProfileComponent implements OnInit {
     this.editing = !this.editing;
   }
 
-  onSubmit() {
+ /* onSubmit() {
     this.userService.updateUser(this.user).subscribe(user => {
-      this.user = user;
       this.editing = false;
     });
-  }
+  }*/
 
   public onUpdateUser(user: User) {
     this.userService.updateUser(user).subscribe(

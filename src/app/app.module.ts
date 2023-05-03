@@ -24,11 +24,8 @@ import { UserProfileComponent } from './components/pages/user-profile/user-profi
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RegistrationComponent,
-    ForgetPasswordComponent,
-    ResetPasswordComponent,
-    LoginComponent
+    AppComponent
+
     
   ],
   imports: [
