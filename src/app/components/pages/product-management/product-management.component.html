@@ -27,7 +27,7 @@
                     <div style="width: 50%;"> <input class="form-control" style="margin-left: 44px;width: 234px;"
                             type="text" placeholder="Search for product" [(ngModel)]="searchText"></div>
                     <div style="width: 50%;"> <a class="btn button4" style="margin-top: -89px;"
-                            (click)="onOpenModal(null!, 'add')" role="button" aria-pressed="true"><i
+                            routerLink="/add-product" role="button" aria-pressed="true"><i
                                 class="fa fa-plus-circle"></i>
                         </a></div>
                     <!-- Sidebar content goes here -->
@@ -60,9 +60,9 @@
                                 <span>{{item.quantityProduct}}</span>
                             </a>
                             <div class="recent-post-descr">
-                                <h6>
+                                <!-- <h6>
                                     <a routerLink="">{{item.title}}</a>
-                                </h6>
+                                </h6>-->
                                 <a routerLink="" class="date">
                                     <i class="far fa-clock mr-2"></i>
                                     {{item.creationDate}}
@@ -92,27 +92,42 @@
                                     <!--DELETE-->
                                     <a placement="top" ngbTooltip="Delete" (click)="deleteProduct(item.idProduct)">
                                         <i class="far fa-trash"></i> </a>
-                                    <!--Add gift-->
-                                    <a placement="top" ngbTooltip="Send Reclamation" (click)="addReclamation()">
+                                    <!--Add reclamation-->
+                                    <a placement="top" ngbTooltip="Send Reclamation"
+                                        [routerLink]="['/add-reclamation/',item.idProduct ]">
                                         <i class="fa fa-envelope"></i> </a>
+
 
 
                                 </div>
                                 <div class="sigma_product-body">
 
                                     <h5 class="sigma_product-title"> <a>{{item.nameProduct}}</a> </h5>
+                                    <div class="sigma_product-title"><a>Quantity: {{item.quantityProduct}}</a></div>
                                     <div class="sigma_rating">
                                         <i>{{item.descriptionProduct}}</i>
                                     </div>
+
                                     <div class="sigma_product-price">
                                         <span>{{item.priceProduct}} DT</span>
 
                                     </div>
 
+                                    <div class="">
+                                        <span>{{getDateDiffInDays(item.expirationDateProduct)}} days are left</span>
+                                    </div>
+                                    <br>
 
                                     <button style="margin-left: -23px;" type="button"
                                         class="btn btn-success btn-link btn-sm btn-just-icon">
                                         <i class="fa fa-gift" (click)="addGift(item)">Add to gift</i>
+                                    </button>
+                                    <!--Add to cart-->
+                                    <button style="margin-left: -23px; margin-top:14px;" type="button"
+                                        class="btn btn-success btn-link btn-sm btn-just-icon">
+
+
+                                        <i class="fa fa-shopping-cart">Add to cart</i>
                                     </button>
                                 </div>
 
@@ -196,9 +211,9 @@
                     <div class="form-group" style="float:left; text-align: center;">
                         <label for="expired" style="color: green ;font-size: 17px;"><i class="fa fa-clock-o"
                                 aria-hidden="true"></i>
-                            <label style="color: black;font-size: 17px">
+                            <!--  <label style="color: black;font-size: 17px">
                                 {{getDateDiffInDays(detailsProduct?.expirationDateProduct,detailsProduct?.categoryProduct)}}
-                            </label>
+                            </label>-->
                         </label>
                         <br>
                     </div>

@@ -8,14 +8,7 @@ export class Gift {
     productsGift:Product[];
     userGift:User[];
     description:String;
+    quantityGift:number;
 
 
-    constructor(idGift:number, beginsAtGift:Date, endsAtGift:Date, productsGift:Product[], userGift:User[],description:String){
-        this.idGift=idGift;
-        this.beginsAtGift=beginsAtGift;
-        this.endsAtGift=endsAtGift;
-        this.productsGift=productsGift;
-        this.userGift=userGift;
-        this.description=description;
-    }
 }

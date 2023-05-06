@@ -16,8 +16,8 @@
 
 <br><br>
 
-<div class="col-md-8 col-lg-9 " style="justify-content: center; align-items: center;" >
-    <div class="tab-content " id="myTabContent">
+<div class="col-md-8 col-lg-9 " style="justify-content: center; align-items: center;    margin-left: 30px;" >
+   
         <div class="row">
             <!-- Data -->
             <div class="col-lg-3 col-md-6" *ngFor="let item of myReclamations ">
@@ -36,14 +36,17 @@
                         </div>
                         <div class="sigma_rating">
                     
-                            <i>{{item.dateReclamation}}</i>
+                            <i>Reclaimed  on {{item.dateReclamation}}</i>
                         </div>
+                        <br>
 
-
-                        <span [ngClass]="{'green-tick': !item.archived, 'red-cross': item.archived}">
-                            <i *ngIf="!item.archived" type="button" class="btn btn-warning" style="color:rgb(0, 0, 0)" >In progress</i>
-                            <i *ngIf="item.archived"  type="button" class="btn btn-success" style="color:rgb(0, 0, 0)">Done</i>
-                          </span>
+                        <span>
+                            <i *ngIf="item.archived"  class="fa fa-spinner" ><button class="btn btn-info">In progress</button></i>
+                            <i *ngIf="!item.archived"  type="button"  class="fa fa-check" ><button class="btn btn-success">Done</button></i>
+                      
+                              
+                              </span>
+                         
                     </div>
 
                 </div>
@@ -51,5 +54,5 @@
             <!-- Data -->
         </div>
     </div>
-</div>
+
 <app-footer></app-footer>

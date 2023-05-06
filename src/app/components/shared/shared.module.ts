@@ -56,7 +56,7 @@ import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
     ServiceSidebarComponent,
     DoctorSidebarComponent,
     ClinicSidebarComponent,
-    ShopSidebarComponent
+    ShopSidebarComponent,
   ]
 })
 export class SharedModule { }

@@ -5,6 +5,8 @@ import { CategoryManagementComponent } from './components/category-management/ca
 import { ReclamationManagementComponent } from './components/reclamation-management/reclamation-management.component';
 import { GiftManagementComponent } from './components/gift-management/gift-management.component';
 import { Breadcrumb } from 'angular-crumbs';
+import { AddReclamationComponent } from './components/reclamation-management/add-reclamation/add-reclamation.component';
+import { AddProductComponent } from './components/pages/product-management/add-product/add-product.component';
 
 
 const routes: Routes = [
@@ -62,7 +64,10 @@ const routes: Routes = [
   {path:'product-management',component:ProductManagementComponent},
   {path:'category-management',component:CategoryManagementComponent},
   {path:'reclamation-management',component:ReclamationManagementComponent},
-  {path:'gift-management',component:GiftManagementComponent}
+  {path:'add-reclamation/:id',component:AddReclamationComponent},
+  {path:'gift-management',component:GiftManagementComponent},
+  {path:'add-product',component:AddProductComponent}
+ 
 ];
 
 @NgModule({

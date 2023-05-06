@@ -19,7 +19,7 @@ export class ProductService {
     return this.httpClient.get<Product[]>(`${this.baseURL}` + "/top3Products");
   }
   OnDetailsProduct(idProduct: number): Observable<Product> {
-    return this.httpClient.get<Product>(`${this.baseURL}` + "/retrieve-product/" + `${idProduct}`);
+    return this.httpClient.get<Product>(`${this.baseURL}` + "/retrieve-product/"+`${idProduct}`);
   }
 
   addProduct(product: Product): Observable<Object> {
@@ -33,5 +33,9 @@ export class ProductService {
   deleteProduct(id: number): Observable<Object> {
     
     return this.httpClient.delete("http://localhost:8082/PharmaLife/Product/delete-product/"+id);
+  }
+  checkProductExists(name: string): Observable<boolean> {
+    const url = `${this.baseURL}/exists/${name}`;
+    return this.httpClient.get<boolean>(url);
   }
 }

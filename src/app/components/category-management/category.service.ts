@@ -14,4 +14,8 @@ export class CategoryService {
   getAllCategoriesNotArchived(): Observable<Category[]> {
     return this.httpClient.get<Category[]>(`${this.baseURL}` + "/all-categoriesNotArchived");
   }
+
+  getCategoryByName(name: string): any  {
+    return this.httpClient.get<any>(`${this.baseURL}` + "/getByName/"+name);
+  }
 }

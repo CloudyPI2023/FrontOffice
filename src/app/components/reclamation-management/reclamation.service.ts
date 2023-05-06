@@ -19,4 +19,8 @@ export class ReclamationService {
   getMyReclamations(idUser:number): Observable<Reclamation[]> {
     return this.httpClient.get<Reclamation[]>(`${this.baseURL}` + "/my-reclamations/"+`${idUser}`);
   }
+
+  duplicatedReclamation(idUser:number,idProduct:number): Observable<Reclamation[]> {
+    return this.httpClient.get<Reclamation[]>(`${this.baseURL}` + "/getrec/"+`${idUser}`+"/"+`${idProduct}`);
+  }
 }

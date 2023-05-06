@@ -17,6 +17,9 @@ export class GiftService {
   addGift(giftId:number,product:Product): any {
     return this.httpClient.post("http://localhost:8082/PharmaLife/Gift/"+`${giftId}`+"/products",product);
   }
+  removeProductFromGift(giftId:number,product:Product): any {
+    return this.httpClient.post("http://localhost:8082/PharmaLife/Gift/"+`${giftId}`+"/product-delete",product);
+  }
 
   getGifts(): Observable<Gift[]> {
     return this.httpClient.get<Gift[]>(`${this.baseURL}` + "/all-gifts");
@@ -24,4 +27,9 @@ export class GiftService {
   myGifts(idUser:number): Observable<Gift[]> {
     return this.httpClient.get<Gift[]>(`${this.baseURL}` + "/myGifts/"+idUser);
   }
+
+  getDuplicatedProduct(idGift:number,idProduct:number): Observable<boolean> {
+    return this.httpClient.get<boolean>(`${this.baseURL}` + "/checkDuplication/"+idGift+"/"+idProduct);
+  }
+
 }
