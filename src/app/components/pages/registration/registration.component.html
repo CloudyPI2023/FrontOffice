@@ -23,12 +23,13 @@
 				<div class="col-md-7 col-lg-4 login-wrap"  >
 					<div class=" p-0" >
 		      	<h3 class="mb-4 text-center" style="color: black;"><b>Registration</b></h3>
-		      	<form (ngSubmit)="userRegister()" action="#" class="contact-form form-validate" novalidate="novalidate">
+		      	<form #formRegister="ngForm"  (ngSubmit)="userRegister()" class="contact-form form-validate">
 					<div class="row ">
 						<div class="col-sm-6 ">
 							<div class="form-group">
 								<label class="required-field" for="firstName" style="color: black;">First Name</label>
-								<input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="user.firstName" placeholder="First Name">
+								<input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="user.firstName" placeholder="First Name"
+								>
 							</div>
 						</div>
 						<div class="col-sm-6 ">
@@ -42,7 +43,7 @@
 							<div class="form-group">
 								<label class="required-field" for="email" style="color: black;">Email</label>
 								<input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" placeholder="example@gmail.com">
-							</div>
+						</div>
 						</div>
 						<div class="col-sm-6 ">
 							<div class="form-group">
@@ -106,12 +107,12 @@
 						  </div>
 						  
 
+                            
 
-
-						 <!-- <div class="col-sm-6 ">
+						<!-- <div class="col-sm-6 ">
 							<div class="form-group">
 								<label for="birthDate" style="color: black;">Image</label>
-								<input type="file" accept="image/*" (change)="onFileSelected($event)" id="image_user" name="image_user" [(ngModel)]="user.image_user">
+								<input type="file" accept="image/*" (change)="onImageSelected($event)" id="image_user" name="image_user" [(ngModel)]="user.image_user">
 								<img [src]="imgURL" height="200" *ngIf="imgURL">
 							</div> 
 						</div>-->
@@ -119,7 +120,7 @@
 					</div>
 					<br>
 					<div class=" text-center d-flex align-items-center">
-						<button type="submit" class="form-control btn btn-primary" name="submit">Regitser</button>
+						<button type="submit" [disabled]="formRegister.invalid" class="form-control btn btn-primary" name="submit">Regitser</button>
 					  </div>
 				</form>
 				<br>
