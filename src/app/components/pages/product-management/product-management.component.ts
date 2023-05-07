@@ -65,8 +65,8 @@ export class ProductManagementComponent implements OnInit {
   }
   public  deleteProduct(productId: number) {
     this.ps.deleteProduct(productId).subscribe(() => {
-     alert("Product has been deleted")
       this.getAllProducts();
+      alert("Product has been deleted")
     });
   }
 

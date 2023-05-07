@@ -19,6 +19,9 @@ export class Product {
     public ReclamationsProduct:Reclamation[];
     public creationDate:Date;
 
+    //nosql
+    idCategory:number;
+
 
 
 }

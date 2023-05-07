@@ -69,6 +69,7 @@ export class AddReclamationComponent implements OnInit {
         alert("A reclamation for this product has already been submitted.");
       } else {
         this.rs.addReclamation(this.r).subscribe(() => {
+          alert("Reclamation sent successfully, check your email")
           this.router.navigate(['/reclamation-management']);
         });
       }

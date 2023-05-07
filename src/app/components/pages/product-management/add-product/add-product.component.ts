@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router,RouterStateSnapshot  } from '@angular/router';
+import { ActivatedRoute, Router, RouterStateSnapshot } from '@angular/router';
 import { Category } from 'src/app/Models/ProductAndGiftManagement/category';
 import { Product } from 'src/app/Models/ProductAndGiftManagement/product';
 import { CategoryService } from 'src/app/components/category-management/category.service';
@@ -13,8 +13,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddProductComponent implements OnInit {
   productForm: FormGroup;
-  selectedCategory: any={}; 
-  p:Product={
+  selectedCategory: any = {};
+  p: Product = {
     idProduct: 0,
     referenceProduct: '',
     nameProduct: '',
@@ -27,31 +27,32 @@ export class AddProductComponent implements OnInit {
     userProduct: { idUser: 1, firstName: 'sahar', lastName: 'letaief', email: 'sahar.letaief@esprit.tn' },
     ReclamationsProduct: [],
     creationDate: new Date(),
-    categoryProduct: new Category(),
+    categoryProduct: { idCategory: 0, nameCategory: '', descriptionCategory: '', archived: true },
+    idCategory: 0
   }
 
-  allCategories:Category[];
-  prod:Product;
-  categ:Category=new Category();
-  name:any;
+  allCategories: Category[];
+  prod: Product;
+  categ: Category;
+  name: any;
 
 
-  constructor(private fb: FormBuilder,private cs:CategoryService,private router:Router,private ps:ProductService,private route: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private cs: CategoryService, private router: Router, private ps: ProductService, private route: ActivatedRoute) {
     this.createForm();
   }
   createForm() {
     this.productForm = this.fb.group({
       Pp: ['', [Validators.required, Validators.min(15)]],
       Pq: ['', [Validators.required, Validators.min(15)]],
-      nameC:['', Validators.required]
+      nameC: ['', Validators.required]
     });
   }
   ngOnInit(): void {
-    
+
     this.getCategories();
- 
-   
-   
+
+
+
   }
   public getCategories() {
     this.cs.getAllCategoriesNotArchived().subscribe(data => {
@@ -66,42 +67,62 @@ export class AddProductComponent implements OnInit {
     });
   }
 
-  onSelected(value:string): void {
+  onSelected(value: string): void {
     console.log("Selected category name: ", value);
     this.name = value;
-    console.log("nameee"+this.name)
+    console.log("nameee" + this.name)
   }
 
   addProduct(p: Product) {
-    
-    this.cs.getCategoryByName(this.name).subscribe((data: Category) => {
-      this.categ = data;
-      console.log("Category object: ", this.categ);
-      p.categoryProduct=this.categ
-      console.log("lena l9aha "+p.categoryProduct.idCategory)
-      this.ps.addProduct(p).subscribe(() => {
-        this.router.navigate(['/product-management']);
-      });
-    });
-      
-     
-    
-  }
-  
-  
-  
-   /*expDate(Date: Date): Boolean {
-    //const date1 = new Date(date1);
-    const date2 = new Date();
-    const diffMs = Math.abs(date2.getTime() - date1.getTime());
-    const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
-    return date2>date1;
-  }*/
+    this.ps.checkProductExists(this.name).subscribe(
+      (exists: boolean) => {
+        if (!exists) {
+          alert("Product already exists with the same name ")
+        } else {
+          this.cs.getCategoryByName(this.name).subscribe((data: Category) => {
+            this.categ = data;
+            console.log("Category object: ", this.categ);
+            p.idCategory = this.categ.idCategory;
+            console.log("lena l9aha " + p.categoryProduct.idCategory)
+            this.ps.addProduct(p).subscribe(() => {
+              alert("Product added successfully")
+              this.router.navigate(['/product-management']);
+            });
+          });
+        }
+      },
 
+    );
+  }
+
+
+
+
+
+  /*expDate(Date: Date): Boolean {
+   //const date1 = new Date(date1);
+   const date2 = new Date();
+   const diffMs = Math.abs(date2.getTime() - date1.getTime());
+   const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+   return date2>date1;
+ }*/
+
+ public getDate(dateString1: Date): any {
+  const date1 = new Date(dateString1);
+  const date2 = new Date();
+  const diffMs = Math.abs(date2.getTime() - date1.getTime());
+  const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+  if (date2 < date1)  {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
   /*onSubmit() {
     this.addProduct();
   }*/
-  
-  }
+
+}
 
