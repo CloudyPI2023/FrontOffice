@@ -47,6 +47,8 @@ import { DonationComponent } from '../views/donation/donation.component';
 import { DonationsGiftComponent } from '../views/donation/donations-gift/donations-gift.component';
 import { MyDonationsComponent } from '../views/donation/my-donations/my-donations.component';
 import { RequestComponent } from '../views/request/request.component';
+import { ReservationComponent } from '../views/reservation/reservation.component';
+import { EventComponent } from '../views/event/event.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -87,7 +89,10 @@ import { RequestComponent } from '../views/request/request.component';
     MyAssociationComponent,
     AssociationRequestsComponent,
     AddRequestComponent,
-    ListRequestsComponent
+    ListRequestsComponent,
+
+    ReservationComponent,
+    EventComponent
 
 
   ],

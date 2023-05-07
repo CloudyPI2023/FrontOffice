@@ -160,6 +160,24 @@
     },
     {
         "id": 7,
+        "linkText": "Events",
+        "child": true,
+        "submenu": [
+            {
+                "id": 7.1,
+                "link": "/event",
+                "linkText": "Events"
+            },
+            {
+                "id": 7.2,
+                "link": "/reservation",
+                "linkText": "Reservations"
+            }
+          
+        ]
+    },
+    {
+        "id": 8,
         "link": "/contact",
         "linkText": "Contact Us"
     }

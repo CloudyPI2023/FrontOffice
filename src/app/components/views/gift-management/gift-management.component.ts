@@ -19,7 +19,6 @@ export class GiftManagementComponent implements OnInit {
   token = localStorage.getItem('token');
   decodedToken : any;
   idUser :any ;
- // idUser:number=1;
   mygifts!:Gift[];
   ngOnInit(): void {
     if (this.token) {

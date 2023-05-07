@@ -24,6 +24,8 @@ import { RequestComponent } from './components/views/request/request.component';
 import { ContactDonationComponent } from './components/views/donation/contact-donation/contact-donation.component';
 import { DonationsGiftComponent } from './components/views/donation/donations-gift/donations-gift.component';
 import { CollectComponent } from './components/views/donation/collect/collect.component';
+import { EventComponent } from './components/views/event/event.component';
+import { ReservationComponent } from './components/views/reservation/reservation.component';
 
 const routes: Routes = [
   // Home
@@ -80,7 +82,7 @@ const routes: Routes = [
   { path: 'resetPassword', component: ResetPasswordComponent},
   { path: 'userProfile', component: UserProfileComponent ,data: { breadcrumb: "User Profile" } },
 
-  //{ path: '**', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } }
+  //
     //ProductAndGiftsManagement
   {path:'product-management',component:ProductManagementComponent},
   {path:'category-management',component:CategoryManagementComponent},
@@ -110,8 +112,17 @@ const routes: Routes = [
   { path: 'collectDonations',component: CollectComponent},
    
 
+  { path: 'event',component:EventComponent },
+  { path: 'reservation',component:ReservationComponent },
 
 
+
+
+  
+
+
+
+  { path: '**', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } }
 
 ];
 

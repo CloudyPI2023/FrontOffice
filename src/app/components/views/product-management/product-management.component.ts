@@ -100,8 +100,7 @@ export class ProductManagementComponent implements OnInit {
          
             this.gs.addGift(1,p).subscribe((gift:Gift) => {
               alert("Product added successfully to your gift")
-              this.getAllProducts();
-              this.router.navigate(['/product-management']);
+              this.router.navigate(['/gift-management']);
             });
         }
       })
