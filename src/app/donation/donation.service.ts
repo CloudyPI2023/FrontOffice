@@ -15,8 +15,13 @@ export class DonationService {
   ///crud donation
 
   getDonationList(): Observable<Donation[]>{
-   return this.httpClient.get<Donation[]>(this.url + '/retrieveAllDonations');  
+   return this.httpClient.get<Donation[]>(this.url + '/getDisabledDonations');  
   }
+
+  getMyDonations(idUser: number): Observable<Donation[]>{
+    return this.httpClient.get<Donation[]>(`${this.url}/getMyDonations/${idUser}`);  
+  }
+  
   createDonation(donation: Donation): Observable<any>{
     return this.httpClient.post(this.url + '/addDonation', donation);
   }
@@ -32,6 +37,10 @@ export class DonationService {
 
   deleteDonation(idDonation: number): Observable<Object>{
     return this.httpClient.delete(`${this.url}/deleteDonation/${idDonation}`);
+  }
+
+  addDonationByMail(donation: Donation, idUser:number): Observable<any>{
+    return this.httpClient.post(`${this.url}/addDonationByMail/${idUser}`, donation);
   }
  
 }

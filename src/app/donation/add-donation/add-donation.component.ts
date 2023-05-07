@@ -11,7 +11,7 @@ import { DonationService } from '../donation.service';
 export class AddDonationComponent implements OnInit {
 
   donation: Donation = new Donation();
-
+  idUser : number = 1;
   constructor(private donationService: DonationService,
     private router:Router) { } 
 
@@ -19,7 +19,7 @@ export class AddDonationComponent implements OnInit {
   }
 
   saveDonation(){
-    this.donationService.createDonation(this.donation).subscribe(data =>{
+    this.donationService.addDonationByMail(this.donation,this.idUser ).subscribe(data =>{
       console.log(data);
       this.goToDonationsList();
     },
@@ -35,6 +35,8 @@ export class AddDonationComponent implements OnInit {
   onSubmit(){
     console.log(this.donation);
     this.saveDonation();
+    alert("Your is donation Added Successfully !");
+    this.goToDonationsList();
   }
 
 

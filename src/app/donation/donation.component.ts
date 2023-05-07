@@ -6,6 +6,8 @@ import { NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AssociationRequestService } from '../association-requests/association-request.service';
 import { Request } from '../models/request';
+import { AssociationService } from '../association/association.service';
+import { Association } from '../models/association';
 
 @Component({
   selector: 'app-donation',
@@ -14,19 +16,20 @@ import { Request } from '../models/request';
 })
 export class DonationComponent implements OnInit {
 
-
+  idUser: number = 1;
+  associations: Association[];
   myRequest: Request = new Request();
-
+  
   idAssociation: number;
   donations: Donation[]; 
 
   constructor(private donationService: DonationService, private associationRequestService : AssociationRequestService,
-    private route:ActivatedRoute,private router:Router) { }
+    private associationService: AssociationService,private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
     this.idAssociation = this.route.snapshot.params['idAssociation']; 
     this.getDonations(); 
-  } 
+  }  
 
   private getDonations(){
     this.donationService.getDonationList().subscribe(data => {
@@ -54,7 +57,7 @@ export class DonationComponent implements OnInit {
     this.associationRequestService.assignRequestToDonation(this.myRequest, idDonation, this.idAssociation).subscribe(
       (response: Request) => {
         console.log(response);
-        //this.getAssociations();
+       this.goToAssociationsList();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -62,28 +65,13 @@ export class DonationComponent implements OnInit {
     );
   }
 
-
-
-
-
-
-   ///les interfaces : crud Donation
-  public onOpenModal(donation: Donation, mode: string): void {
-    const container = document.getElementById('main-container');
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.style.display = 'none';
-    button.setAttribute('data-toggle', 'modal');
-   
-    if (mode === 'add') {
-  
-      button.setAttribute('data-target', '#addDonationModal');
-    }
-    
-  
-    container?.appendChild(button);
-    button.click();
+  goToAssociationsList(){
+    this.router.navigate(['/myAssociation']);
   }
+
+
+
+ 
 
 
 

@@ -17,8 +17,8 @@
             <li class="breadcrumb-item">
                 <a routerLink="/addAssociation" class="btn-link">New Association</a>
             </li>
-            
-           
+
+
         </ol>
 
 
@@ -51,14 +51,15 @@
                             </li>
                             <li _ngcontent-sdw-c4="" ng-reflect-_id="2" class="nav-item">
                                 <a _ngcontent-sdw-c4="" href="" ngbnavlink="" id="ngb-nav-1" class="nav-link active"
-                                    role="tab" aria-selected="false" aria-disabled="false" routerLink="/addAssociation">New
+                                    role="tab" aria-selected="false" aria-disabled="false"
+                                    routerLink="/addAssociation">New
                                     Association
                                     <i _ngcontent-sdw-c4="" class="fal fa-chevron-right"></i></a><!---->
                             </li>
                             <li _ngcontent-sdw-c4="" ng-reflect-_id="3" class="nav-item"><a _ngcontent-sdw-c4="" href=""
                                     ngbnavlink="" id="ngb-nav-2" class="nav-link" role="tab" aria-selected="false"
-                                    aria-disabled="false" routerLink="/myRequest"> My Requests <i
-                                        _ngcontent-sdw-c4="" class="fal fa-chevron-right"></i>
+                                    aria-disabled="false" routerLink="/myRequest"> My Requests <i _ngcontent-sdw-c4=""
+                                        class="fal fa-chevron-right"></i>
                                 </a><!----></li>
                             <li _ngcontent-sdw-c4="" ng-reflect-_id="4" class="nav-item"><a _ngcontent-sdw-c4="" href=""
                                     ngbnavlink="" id="ngb-nav-3" class="nav-link" role="tab" aria-selected="false"
@@ -87,21 +88,43 @@
                             <div class="row">
 
 
-
                                 <div class="col-lg-6">
-                                    <!--<label>Name <span
+
+                                    <input placeholder="associationName" style="max-width: 435px;" type="text"
+                                        class="form-control" id="name" [(ngModel)]="association.associationName"
+                                        name="name" required #nameA="ngModel" pattern="^[^_!?:;*+-/]*$" minlength="3"
+                                        maxlength="50">
+
+                                    <div *ngIf="nameA.invalid && (nameA.touched || nameA.dirty)">
+                                        <div class="alert alert-danger" *ngIf="nameA.errors?.required">Name Association
+                                            field is required</div>
+                                        <div class="alert alert-danger" *ngIf="nameA.errors?.pattern">Name Association
+                                            cannot contain caracters ! *
+                                            / ? : ; - +</div>
+                                        <div class="alert alert-danger" *ngIf="nameA.errors?.minlength">min length is
+                                            3 caracters</div>
+                                        <div class="alert alert-danger" *ngIf="nameA.errors?.maxlength">max
+                                            length is 50 caracters</div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <!--<div class="col-lg-6">
+                                    <label>Name <span
                                         class="text-danger">*</span>
-                                    </label>-->
+                                    </label>
                                     <div class="form-group">
 
                                         <input type="text" class="form-control" id="associationName"
                                             [(ngModel)]="association.associationName" placeholder="Association Name"
                                             name="associationName">
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <div class="col-lg-6">
-                                   <!-- <label>Logo <span
+                                    <!-- <label>Logo <span
                                         class="text-danger">*</span>
                                     </label>-->
                                     <div class="form-group">
@@ -124,6 +147,8 @@
                                     </div>
                                 </div>
 
+                                
+
                                 <div class="col-lg-6">
                                     <!--<label>Phone Number <span
                                         class="text-danger">*</span>
@@ -136,17 +161,24 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6">
-                                    <!--<label>Address <span
-                                        class="text-danger">*</span>
-                                    </label>-->
-                                    <div class="form-group">
 
-                                        <input type="text" class="form-control" id="adressAssociation"
-                                            [(ngModel)]="association.adressAssociation" placeholder="Address"
-                                            name="adressAssociation">
+                                <div class="col-lg-6">
+
+                                    <input placeholder="adressAssociation" style="max-width: 435px;" type="text"
+                                        class="form-control" id="name" [(ngModel)]="association.adressAssociation"
+                                        name="adressAssociation" required #adressAssociationA="ngModel" pattern="^[^_!?:;*+-/]*$">
+
+                                    <div *ngIf="adressAssociationA.invalid && (adressAssociationA.touched || adressAssociationA.dirty)">
+                                        <div class="alert alert-danger" *ngIf="adressAssociationA.errors?.required">Add Association
+                                            field is required</div>
+                                        <div class="alert alert-danger" *ngIf="adressAssociationA.errors?.pattern">Add Association
+                                            cannot contain caracters ! *
+                                            / ? : ; - +</div>
+                                       
                                     </div>
                                 </div>
+
+                               
 
                                 <div class="col-lg-6">
                                     <!--<label>Created Date <span
@@ -154,13 +186,13 @@
                                     </label>-->
                                     <div class="form-group">
 
-                                        <input type="datetime" class="form-control" id="dateAssociation"
+                                        <input type="date" class="form-control" id="dateAssociation"
                                             [(ngModel)]="association.dateAssociation" placeholder="Created Date"
                                             name="dateAssociation">
                                     </div>
                                 </div>
 
-                               
+
 
 
                                 <div class="form-group col-xl-12">
@@ -168,8 +200,10 @@
                                     <!--<label>Country <span
                                             class="text-danger">*</span>
                                     </label>-->
-                                           
-                                    <select class="form-control"  id="countryAssocation"  [(ngModel)]="association.countryAssocation" name="countryAssocation" placeholder="select country">
+
+                                    <select class="form-control" id="countryAssocation"
+                                        [(ngModel)]="association.countryAssocation" name="countryAssocation"
+                                        placeholder="select country">
                                         <option>select country</option>
                                         <option value="Tunisie" ng-reflect-value="Tunisie">
                                             Tunisie</option>
@@ -205,7 +239,7 @@
                         </div>
 
                         <div class="form-block">
-                            
+
                             <div class="row">
 
                                 <div class="col-12">

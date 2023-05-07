@@ -9,7 +9,7 @@
         </div>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a routerLink="/donation" class="btn-link">All</a>
+                <a routerLink="/association" class="btn-link">All</a>
             </li>
             <li class="breadcrumb-item">
                 <a routerLink="/myDonations" class="btn-link">MyDonations</a>
@@ -85,30 +85,65 @@
                             <h4>New Donation:</h4>
 
                             <div class="row">
-
-
-
+                              
+                                
                                 <div class="col-lg-6">
-                                    <div class="form-group">
 
-                                        <input type="text" class="form-control" id="nameDonation"
-                                            [(ngModel)]="donation.nameDonation" placeholder="Donation Name"
-                                            name="nameDonation">
+                                    <input placeholder="nameDonation" style="max-width: 435px;" type="text"
+                                        class="form-control" id="name" [(ngModel)]="donation.nameDonation"
+                                        name="nameDonation" required #nameDonationA="ngModel" pattern="^[^_!?:;*+-/]*$" minlength="3"
+                                        maxlength="50">
+
+                                    <div *ngIf="nameDonationA.invalid && (nameDonationA.touched || nameDonationA.dirty)">
+                                        <div class="alert alert-danger" *ngIf="nameDonationA.errors?.required">Donation Name
+                                            field is required</div>
+                                        <div class="alert alert-danger" *ngIf="nameDonationA.errors?.pattern">Name Donation
+                                            cannot contain caracters ! *
+                                            / ? : ; - +</div>
+                                        <div class="alert alert-danger" *ngIf="nameDonationA.errors?.minlength">min length is
+                                            3 caracters</div>
+                                        <div class="alert alert-danger" *ngIf="nameDonationA.errors?.maxlength">max
+                                            length is 50 caracters</div>
                                     </div>
                                 </div>
 
+
+                               
                                 <div class="col-lg-6">
+                                    <select class="form-control" id="donationType"
+                                        [(ngModel)]="donation.donationType" name="donationType"
+                                        placeholder="select donationType">
+                                       
+                                        <option value="Money" ng-reflect-value="Money">
+                                            Money</option>
+                                        <option value="Drugs" ng-reflect-value="Drugs">Drugs
+                                        </option>
+                                        <option value="Materials" ng-reflect-value="Materials">Materials
+                                        </option>
+                                       
+                                    </select>
+                                </div>
+
+                                <!--<div class="col-lg-6">
                                     <div class="form-group">
 
                                         <input type="text" class="form-control" id="donationType"
                                             [(ngModel)]="donation.donationType" placeholder="Type" name="donationType">
                                     </div>
+                                </div>-->
+
+                                <div class="form-group col-xl-12">
+
+                                    <!--<label>Country <span
+                                            class="text-danger">*</span>
+                                    </label>-->
+                                   
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="form-group">
 
-                                        <input type="text" class="form-control" id="quantityDonation"
+                                        <input type="number" class="form-control" id="quantityDonation"
                                             [(ngModel)]="donation.quantityDonation" placeholder="Quantity"
                                             name="quantityDonation">
                                     </div>
@@ -154,7 +189,7 @@
                         <!--Button-->
                         <li class="d-flex align-items-center justify-content-between">
                             <button class="sigma_btn btn-block btn-sm mt-4" type="submit">
-                                Confirm and Pay <i class="fal fa-arrow-right ml-3"></i>
+                                Confirm and Add <i class="fal fa-arrow-right ml-3"></i>
                             </button>
                         </li>
 

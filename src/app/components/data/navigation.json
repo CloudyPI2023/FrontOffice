@@ -104,7 +104,7 @@
         "submenu": [
             {
                 "id": 4.1,
-                "link": "/donation",
+                "link": "/myDonations",
                 "linkText": "Donations"
             },
             {

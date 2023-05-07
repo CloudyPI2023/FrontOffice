@@ -5,7 +5,7 @@ export class Donation {
      nameDonation: string; 
      descriptionDonation: string;
      quantityDonation: number;
-     imageDonation: string;
+     imageDonation: string; 
      dateDonation: Date; 
      donationType: string;
      statusDonation: string;

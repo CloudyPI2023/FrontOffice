@@ -25,6 +25,10 @@ export class AssociationService {
      return this.httpClient.post(this.url + '/addAssociation', association);
    }
 
+   createAssociationbyMail(association: Association, idUser:number): Observable<any>{
+    return this.httpClient.post(`${this.url}/addAssociationByMail/${idUser}`, association);
+  }
+
    
   updateAssociation1(idAssociation:number, association: Association):Observable<Object>{
     return this.httpClient.put(`${this.url}/updateAssociation/${idAssociation}`, association);

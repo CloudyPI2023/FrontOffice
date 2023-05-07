@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class AddAssociationComponent implements OnInit {
 
   association: Association = new Association();
+  idUser : number = 1;
 
   constructor(private associationService: AssociationService,
     private router:Router) { } 
@@ -19,9 +20,9 @@ export class AddAssociationComponent implements OnInit {
   }
 
   saveAssociation(){
-    this.associationService.createAssociation(this.association).subscribe(data =>{
+    this.associationService.createAssociationbyMail(this.association,this.idUser ).subscribe(data =>{
       console.log(data);
-      this.goToAssociationsList();
+     // this.goToAssociationsList();
     },
     error => console.log(error)
     
@@ -35,6 +36,9 @@ export class AddAssociationComponent implements OnInit {
   onSubmit(){
     console.log(this.association);
     this.saveAssociation();
+    alert("Your is Association Added Successfully !");
+    this.goToAssociationsList();
+
   }
 
 

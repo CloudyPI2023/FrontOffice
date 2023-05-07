@@ -43,13 +43,15 @@ export class AddRequestComponent implements OnInit {
     this.associationRequestService.assignRequestToDonationInf3(this.myRequest, this.idAssociation).subscribe(
       (response: Request) => {
         console.log(response);
-        //this.getAssociations();
+        alert("Your Request is Added Successfully !");
+        this.getAssociations(); 
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
       }
     );
   }
+  
 
   private getAssociations(){
     this.associationService.getAssociationList().subscribe(data => {

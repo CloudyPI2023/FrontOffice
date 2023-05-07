@@ -11,16 +11,16 @@ import { Router } from '@angular/router';
 export class MyDonationsComponent implements OnInit {
 
   donations: Donation[]; 
-
+  idUser : number =1;
   constructor(private donationService: DonationService,
     private router:Router) { } 
 
   ngOnInit(): void {
-    this.getDonations(); 
+    this.getDonations(this.idUser); 
   }
 
-  private getDonations(){
-    this.donationService.getDonationList().subscribe(data => {
+  private getDonations(idUser: number){
+    this.donationService.getMyDonations(idUser).subscribe(data => {
       this.donations = data;
     });
   }
@@ -28,7 +28,7 @@ export class MyDonationsComponent implements OnInit {
   deleteDonation(idDonation: number){
     this.donationService.deleteDonation(idDonation).subscribe(data =>{
       console.log(data);
-      this.getDonations();
+      this.getDonations(this.idUser);
     })
   }
 
