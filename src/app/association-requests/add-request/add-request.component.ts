@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Association } from 'src/app/models/association';
 import { AssociationService } from 'src/app/association/association.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-request',
@@ -35,16 +36,16 @@ export class AddRequestComponent implements OnInit {
     );
   } 
 
-  goToAssociationsList(){
-    this.router.navigate(['/myAssociation']);
+  goToMyRequestList(){
+    this.router.navigate(['/myRequest']);
   }
 
-  onSubmit(){
+  onSubmit(f: NgForm){
     this.associationRequestService.assignRequestToDonationInf3(this.myRequest, this.idAssociation).subscribe(
       (response: Request) => {
         console.log(response);
         alert("Your Request is Added Successfully !");
-        this.getAssociations(); 
+        this.goToMyRequestList(); 
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

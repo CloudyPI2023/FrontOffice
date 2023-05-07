@@ -37,4 +37,8 @@ export class AssociationRequestService {
   assignRequestToDonationInf3(request: Request, idAssociation: number): Observable<Request> {
     return this.httpClient.post<Request>(`${this.url}/assignRequestToDonationInf3/${idAssociation}`, request);
   }
+
+  deleteRequest(idRequest: number): Observable<Object>{
+    return this.httpClient.delete(`${this.url}/cancelRequest/${idRequest}`);
+  }
 }

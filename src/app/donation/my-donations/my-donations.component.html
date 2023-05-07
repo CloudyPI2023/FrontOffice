@@ -86,7 +86,8 @@
                             </div>
                             <div class="sigma_product-body">
 
-                                <h5 class="sigma_product-title"> <a>{{donation.nameDonation}} | {{donation.donationType}}</a> </h5>
+                                <h5 class="sigma_product-title"> <a>{{donation.nameDonation}} |
+                                        {{donation.donationType}}</a> </h5>
                                 <div class="sigma_rating">
                                     <i>Create At: {{donation.dateDonation}} </i>
                                 </div>
@@ -96,17 +97,24 @@
                                 </div>
                                 <div class="sigma_rating">
                                     <i>{{donation.statusDonation}} </i>
-                                </div>
-                               
+                                </div><br>
+
                                 <!-- Cart 
                             <button 
                                 class="sigma_btn btn-sm" (click)="onOpenModal(association, 'details')">View More
                             </button> -->
+                           
+                                <!--<button type="button" class="btn btn-success btn-link btn-sm btn-just-icon"
+                                    (click)="deleteDonation(donation.idDonation)"style="margin-bottom: 1px;
+                                    margin-right: 11px;">
+                                    <i class="material-icons" >Edit</i>
+                                </button>-->   
+                                
                                 <button type="button" class="btn btn-success btn-link btn-sm btn-just-icon"
                                     (click)="deleteDonation(donation.idDonation)">
-                                    <i class="material-icons">Delete1</i>
+                                    <i class="material-icons">Delete</i>
                                 </button>
-
+                         
 
                             </div>
                         </div>

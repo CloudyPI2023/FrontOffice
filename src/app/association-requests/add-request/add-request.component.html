@@ -80,38 +80,40 @@
             <div class="col-lg-8">
                 <!--Formulaire D'ajout d'une Donation-->
 
-                <form (ngSubmit)="onSubmit()">
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                     <div class="sigma_form style-7">
                         <div class="form-block">
                             <h4>Make a Request:</h4>
 
                             <div class="row">
 
-
-
                                 <div class="col-lg-12">
-                                    <!--<label>Name <span
-                                        class="text-danger">*</span>
-                                    </label>-->
+                                    <label>Request Name <span class="text-danger">*</span>
+                                    </label>
                                     <div class="form-group">
+                                        <input placeholder="nameRequest" type="text" class="form-control" id="name"
+                                            [(ngModel)]="myRequest.nameRequest" name="name" required
+                                            #nameRequestA="ngModel" pattern="^[^_!?:;*+-/]*$" minlength="3"
+                                            maxlength="50">
 
-                                        <input type="text" class="form-control" id="nameRequest"
-                                            [(ngModel)]="myRequest.nameRequest" placeholder="Request Name"
-                                            name="nameRequest">
+                                        <div
+                                            *ngIf="nameRequestA.invalid && (nameRequestA.touched || nameRequestA.dirty)">
+                                            <div class="alert alert-danger" *ngIf="nameRequestA.errors?.required">Name
+                                                Association
+                                                field is required</div>
+                                            <div class="alert alert-danger" *ngIf="nameRequestA.errors?.pattern">Name
+                                                Association
+                                                cannot contain caracters ! *
+                                                / ? : ; - +</div>
+                                            <div class="alert alert-danger" *ngIf="nameRequestA.errors?.minlength">min
+                                                length is
+                                                3 caracters</div>
+                                            <div class="alert alert-danger" *ngIf="nameRequestA.errors?.maxlength">max
+                                                length is 50 caracters</div>
+                                        </div>
                                     </div>
                                 </div>
 
-
-
-
-                                <!--<div class="input_box">
-                <select name="association" class="form-control">
-                  <option>--Select--</option>
-                  <option *ngFor="let ass of associationList">
-                  {{ass.associationName}}
-                  </option>
-                </select>
-                </div>-->
 
 
 
@@ -119,9 +121,8 @@
 
                                 <div class="form-group col-xl-12">
 
-                                    <!--<label>Type <span
-                                            class="text-danger">*</span>
-                                    </label>-->
+                                    <label>Request Type <span class="text-danger">*</span>
+                                    </label>
 
                                     <select class="form-control" id="requestType" [(ngModel)]="myRequest.requestType"
                                         name="requestType" placeholder="select Type">
@@ -166,7 +167,7 @@
 
                         <!--Button-->
                         <li class="d-flex align-items-center justify-content-between">
-                            <button class="sigma_btn btn-block btn-sm mt-4" type="submit">
+                            <button  class="sigma_btn btn-block btn-sm mt-4" type="submit" [disabled]="f.invalid">
                                 Confirm and Add <i class="fal fa-arrow-right ml-3"></i>
                             </button>
                         </li>
