@@ -1,3 +1,5 @@
+import { Donation } from "../AssociationDonation/donation";
+
 export class User {
     idUser: number;
     firstName: String;
@@ -14,5 +16,5 @@ export class User {
     locked: Boolean;
     enabled: Boolean;
     password: String;
-      
+    donationsUser: Donation;
   }

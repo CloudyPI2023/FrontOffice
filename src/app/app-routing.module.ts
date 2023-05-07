@@ -11,6 +11,19 @@ import { ReclamationManagementComponent } from './components/views/reclamation-m
 import { AddReclamationComponent } from './components/views/reclamation-management/add-reclamation/add-reclamation.component';
 import { GiftManagementComponent } from './components/views/gift-management/gift-management.component';
 import { AddProductComponent } from './components/views/product-management/add-product/add-product.component';
+import { DonationComponent } from './components/views/donation/donation.component';
+import { AddDonationComponent } from './components/views/donation/add-donation/add-donation.component';
+import { AssociationComponent } from './components/views/association/association.component';
+import { MyDonationsComponent } from './components/views/donation/my-donations/my-donations.component';
+import { AddAssociationComponent } from './components/views/association/add-association/add-association.component';
+import { AddRequestComponent } from './components/views/association-requests/add-request/add-request.component';
+import { AssociationRequestsComponent } from './components/views/association-requests/association-requests.component';
+import { ListRequestsComponent } from './components/views/association-requests/list-requests/list-requests.component';
+import { MyAssociationComponent } from './components/views/association/my-association/my-association.component';
+import { RequestComponent } from './components/views/request/request.component';
+import { ContactDonationComponent } from './components/views/donation/contact-donation/contact-donation.component';
+import { DonationsGiftComponent } from './components/views/donation/donations-gift/donations-gift.component';
+import { CollectComponent } from './components/views/donation/collect/collect.component';
 
 const routes: Routes = [
   // Home
@@ -74,7 +87,31 @@ const routes: Routes = [
   {path:'reclamation-management',component:ReclamationManagementComponent},
   {path:'add-reclamation/:id',component:AddReclamationComponent},
   {path:'gift-management',component:GiftManagementComponent},
-  {path:'add-product',component:AddProductComponent}
+  {path:'add-product',component:AddProductComponent},
+  ///DonationAssociation
+  { path: 'donation/:idAssociation', component:DonationComponent  },
+  { path: 'addDonation', component:AddDonationComponent },
+  { path: 'myDonations', component:MyDonationsComponent },
+  { path: 'association',component:AssociationComponent },
+  { path: 'addAssociation',component:AddAssociationComponent },
+
+  { path: 'addRequest/:idAssociation',component:AddRequestComponent },
+  
+  { path: 'myRequest',component:AssociationRequestsComponent },
+  { path: 'listRequests/:idAssociation',   component: ListRequestsComponent },
+ 
+
+  { path: 'listRequests/:idAssociation',   component: ListRequestsComponent },
+  
+  { path: 'myAssociation',component:MyAssociationComponent },
+  { path: 'myRequests',component:RequestComponent },
+  { path: 'contactDonations',component:ContactDonationComponent },
+  { path: 'donationGifts',component:DonationsGiftComponent },
+  { path: 'collectDonations',component: CollectComponent},
+   
+
+
+
 
 ];
 

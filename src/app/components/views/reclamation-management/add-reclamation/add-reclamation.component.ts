@@ -7,6 +7,7 @@ import { ProductService } from '../../product-management/product.service';
 import { Reclamation } from 'src/app/components/models/ProductAndGiftManagement/reclamation';
 import { Product } from 'src/app/components/models/ProductAndGiftManagement/product';
 import { JwtServiceService } from 'src/app/components/services/jwt-service.service';
+import { User } from 'src/app/components/models/user/user';
 //import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -38,7 +39,7 @@ export class AddReclamationComponent implements OnInit {
     archived: 0,
     idUser: 0,
     idProduct: 0,
-    userProduct: { idUser: 1, firstName: 'sahar', lastName: 'letaief', email: 'sahar.letaief@esprit.tn' },
+    userProduct: new User(),
     product: new Product()
   }
   oneProduct: Product;

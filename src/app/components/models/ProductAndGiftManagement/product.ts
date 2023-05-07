@@ -1,5 +1,5 @@
 import {Category} from "./category"
-import {User} from "./user"
+import { User } from "../user/user"; 
 import { Reclamation } from "./reclamation";
 
 

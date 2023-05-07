@@ -7,6 +7,7 @@ import { ProductService } from '../product.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategoryService } from '../../category-management/category.service';
 import { JwtServiceService } from 'src/app/components/services/jwt-service.service';
+import { User } from 'src/app/components/models/user/user';
 
 @Component({
   selector: 'app-add-product',
@@ -26,7 +27,7 @@ export class AddProductComponent implements OnInit {
     quantityProduct: '',
     expired: 0,
     expirationDateProduct: new Date(),
-    userProduct: { idUser: 1, firstName: 'sahar', lastName: 'letaief', email: 'sahar.letaief@esprit.tn' },
+    userProduct: new User(),
     ReclamationsProduct: [],
     creationDate: new Date(),
     categoryProduct: { idCategory: 0, nameCategory: '', descriptionCategory: '', archived: true },

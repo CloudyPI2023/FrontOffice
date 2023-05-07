@@ -34,6 +34,19 @@ import { GiftManagementComponent } from '../views/gift-management/gift-managemen
 import { SearchPipe } from 'src/app/search.pipe';
 import { AddReclamationComponent } from '../views/reclamation-management/add-reclamation/add-reclamation.component';
 import { AddProductComponent } from '../views/product-management/add-product/add-product.component';
+import { AddRequestComponent } from '../views/association-requests/add-request/add-request.component';
+import { AssociationRequestsComponent } from '../views/association-requests/association-requests.component';
+import { ListRequestsComponent } from '../views/association-requests/list-requests/list-requests.component';
+import { AddAssociationComponent } from '../views/association/add-association/add-association.component';
+import { AssociationComponent } from '../views/association/association.component';
+import { MyAssociationComponent } from '../views/association/my-association/my-association.component';
+import { AddDonationComponent } from '../views/donation/add-donation/add-donation.component';
+import { CollectComponent } from '../views/donation/collect/collect.component';
+import { ContactDonationComponent } from '../views/donation/contact-donation/contact-donation.component';
+import { DonationComponent } from '../views/donation/donation.component';
+import { DonationsGiftComponent } from '../views/donation/donations-gift/donations-gift.component';
+import { MyDonationsComponent } from '../views/donation/my-donations/my-donations.component';
+import { RequestComponent } from '../views/request/request.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -60,6 +73,21 @@ import { AddProductComponent } from '../views/product-management/add-product/add
     SearchPipe,
     AddReclamationComponent,
     AddProductComponent,
+
+
+    AssociationComponent,
+    DonationComponent,
+    RequestComponent,
+    AddDonationComponent,
+    MyDonationsComponent,
+    ContactDonationComponent,
+    DonationsGiftComponent,
+    CollectComponent,
+    AddAssociationComponent,
+    MyAssociationComponent,
+    AssociationRequestsComponent,
+    AddRequestComponent,
+    ListRequestsComponent
 
 
   ],
