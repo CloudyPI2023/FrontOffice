@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact-map.component.html',
   styleUrls: ['./contact-map.component.css']
 })
+
 export class ContactMapComponent implements OnInit {
 
   constructor() { }

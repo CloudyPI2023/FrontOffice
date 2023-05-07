@@ -1,5 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegistrationComponent } from './components/pages/registration/registration.component';  
+import { LoginComponent } from './components/pages/login/login.component';
+import { ForgetPasswordComponent } from './components/pages/forget-password/forget-password.component';
+import { ResetPasswordComponent } from './components/pages/reset-password/reset-password.component';
+import { UserProfileComponent } from './components/pages/user-profile/user-profile.component';
+import { ProductManagementComponent } from './components/views/product-management/product-management.component';
+import { CategoryManagementComponent } from './components/views/category-management/category-management.component';
+import { ReclamationManagementComponent } from './components/views/reclamation-management/reclamation-management.component';
+import { AddReclamationComponent } from './components/views/reclamation-management/add-reclamation/add-reclamation.component';
+import { GiftManagementComponent } from './components/views/gift-management/gift-management.component';
+import { AddProductComponent } from './components/views/product-management/add-product/add-product.component';
 
 const routes: Routes = [
   // Home
@@ -49,7 +60,22 @@ const routes: Routes = [
   { path: 'contact', loadChildren: () => import('./components/pages/contact/contact.module').then(m => m.ContactModule), data: { breadcrumb: "Contact Us" } },
   // Extra
   { path: 'error-page', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } },
-  { path: '**', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } }
+ 
+  { path: 'registration',component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
+  { path : 'forgetPassword', component:ForgetPasswordComponent},
+  { path: 'resetPassword', component: ResetPasswordComponent},
+  { path: 'userProfile', component: UserProfileComponent ,data: { breadcrumb: "User Profile" } },
+
+  //{ path: '**', loadChildren: () => import('./components/pages/error-page/error-page.module').then(m => m.ErrorPageModule), data: { breadcrumb: "Error 404" } }
+    //ProductAndGiftsManagement
+  {path:'product-management',component:ProductManagementComponent},
+  {path:'category-management',component:CategoryManagementComponent},
+  {path:'reclamation-management',component:ReclamationManagementComponent},
+  {path:'add-reclamation/:id',component:AddReclamationComponent},
+  {path:'gift-management',component:GiftManagementComponent},
+  {path:'add-product',component:AddProductComponent}
+
 ];
 
 @NgModule({

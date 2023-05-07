@@ -99,24 +99,25 @@
     },
     {
         "id": 5,
-        "linkText": "Doctors",
+        "linkText": "Products and gifts",
         "child": true,
         "submenu": [
             {
                 "id": 5.1,
-                "link": "/doctor-grid",
-                "linkText": "Doctors Grid"
+                "link": "/product-management",
+                "linkText": "Our products"
             },
             {
                 "id": 5.2,
-                "link": "/doctor-list",
-                "linkText": "Doctors List"
+                "link": "/gift-management",
+                "linkText": "Available gifts"
             },
             {
                 "id": 5.3,
-                "link": "/doctor-details/1",
-                "linkText": "Doctors Details"
+                "link": "/reclamation-management",
+                "linkText": "My reclamations"
             }
+
         ]
     },
     {
@@ -166,4 +167,6 @@
         "link": "/contact",
         "linkText": "Contact Us"
     }
+
+
 ]

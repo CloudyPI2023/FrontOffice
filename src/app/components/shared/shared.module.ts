@@ -19,9 +19,21 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { ClinicSidebarComponent } from './clinic-sidebar/clinic-sidebar.component';
 import { SmallCartComponent } from './small-cart/small-cart.component';
 import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
-
-
-
+//import { LoginComponent } from '../pages/login/login.component';
+import { JwtServiceService } from '../services/jwt-service.service';
+import { UserProfileComponent } from '../pages/user-profile/user-profile.component';
+import { LoginComponent } from '../pages/login/login.component';
+import { RegistrationComponent } from '../pages/registration/registration.component';
+import { ResetPasswordComponent } from '../pages/reset-password/reset-password.component';
+import { ForgetPasswordComponent } from '../pages/forget-password/forget-password.component'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProductManagementComponent } from '../views/product-management/product-management.component';
+import { ReclamationManagementComponent } from '../views/reclamation-management/reclamation-management.component';
+import { CategoryManagementComponent } from '../views/category-management/category-management.component';
+import { GiftManagementComponent } from '../views/gift-management/gift-management.component';
+import { SearchPipe } from 'src/app/search.pipe';
+import { AddReclamationComponent } from '../views/reclamation-management/add-reclamation/add-reclamation.component';
+import { AddProductComponent } from '../views/product-management/add-product/add-product.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -35,7 +47,21 @@ import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
     MobileMenuComponent,
     ClinicSidebarComponent,
     SmallCartComponent,
-    ShopSidebarComponent
+    ShopSidebarComponent,
+    UserProfileComponent,
+    RegistrationComponent,
+    ForgetPasswordComponent,
+    ResetPasswordComponent,
+    LoginComponent,
+    ProductManagementComponent,
+    ReclamationManagementComponent,
+    CategoryManagementComponent,
+    GiftManagementComponent,
+    SearchPipe,
+    AddReclamationComponent,
+    AddProductComponent,
+
+
   ],
   imports: [
     CommonModule,
@@ -44,8 +70,10 @@ import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
     BreadcrumbModule,
     FormsModule,
     SlickCarouselModule,
-    NgxSliderModule
+    NgxSliderModule,
+    ReactiveFormsModule,
   ],
+  providers : [JwtServiceService],
   exports:[
     HeaderComponent,
     HeaderTwoComponent,
