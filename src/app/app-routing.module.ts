@@ -26,6 +26,9 @@ import { DonationsGiftComponent } from './components/views/donation/donations-gi
 import { CollectComponent } from './components/views/donation/collect/collect.component';
 import { EventComponent } from './components/views/event/event.component';
 import { ReservationComponent } from './components/views/reservation/reservation.component';
+import { ArticleDetailComponent } from './components/views/article-detail/article-detail.component';
+import { ArticleComponent } from './components/views/article/article.component';
+import { CommentComponent } from './components/views/comment/comment.component';
 
 const routes: Routes = [
   // Home
@@ -116,7 +119,10 @@ const routes: Routes = [
   { path: 'reservation',component:ReservationComponent },
 
 
-
+//Article
+{ path: 'article', component:ArticleComponent  },
+{ path: 'article-detail/:id', component:ArticleDetailComponent},
+{ path: 'comment', component:CommentComponent},
 
   
 

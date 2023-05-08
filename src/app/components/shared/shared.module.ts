@@ -19,7 +19,6 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { ClinicSidebarComponent } from './clinic-sidebar/clinic-sidebar.component';
 import { SmallCartComponent } from './small-cart/small-cart.component';
 import { ShopSidebarComponent } from './shop-sidebar/shop-sidebar.component';
-//import { LoginComponent } from '../pages/login/login.component';
 import { JwtServiceService } from '../services/jwt-service.service';
 import { UserProfileComponent } from '../pages/user-profile/user-profile.component';
 import { LoginComponent } from '../pages/login/login.component';
@@ -49,6 +48,9 @@ import { MyDonationsComponent } from '../views/donation/my-donations/my-donation
 import { RequestComponent } from '../views/request/request.component';
 import { ReservationComponent } from '../views/reservation/reservation.component';
 import { EventComponent } from '../views/event/event.component';
+import { ArticleDetailComponent } from '../views/article-detail/article-detail.component';
+import { ArticleComponent } from '../views/article/article.component';
+import { CommentComponent } from '../views/comment/comment.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -92,7 +94,10 @@ import { EventComponent } from '../views/event/event.component';
     ListRequestsComponent,
 
     ReservationComponent,
-    EventComponent
+    EventComponent,
+    ArticleComponent,
+    ArticleDetailComponent,
+    CommentComponent,
 
 
   ],
