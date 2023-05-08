@@ -1,6 +1,6 @@
 export class Cart {
     idCommand!: number | undefined;
-    statusCommand: string = "En cours";
+    statusCommand: string = "Accepted";
     dateCommand: Date | undefined;
     shippingAddressCommand: string | undefined;
     idUser: number | undefined;

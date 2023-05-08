@@ -49,7 +49,8 @@
 
         <!-- Cart Table End -->
         <!-- Coupon Code Start -->
-        <form>
+
+      <!--  <form>
           
            
             <div>
@@ -73,7 +74,39 @@
             </div>
           
         
+          </form>     -->
+
+
+
+
+          <form>
+            <div class="form-group">
+              <label for="dateCommand">Command Date:</label>
+              <input type="date" id="dateCommand" name="dateCommand" class="form-control" [(ngModel)]="cart.dateCommand">
+            </div>
+            
+            <div class="form-group">
+              <label for="shippingAddressCommand">Shipping Address:</label>
+              <input type="text" id="shippingAddressCommand" name="shippingAddressCommand" class="form-control" [(ngModel)]="cart.shippingAddressCommand">
+            </div>
+            
+            <div class="form-group">
+              <label for="dateLivraison">Livraison Date:</label>
+              <input type="date" id="dateLivraison" name="dateLivraison" class="form-control" [(ngModel)]="cart.dateLivraison">
+            </div>
+            
+            <div class="form-group">
+              <label for="notes">Notes:</label>
+              <textarea id="notes" name="notes" class="form-control" [(ngModel)]="cart.notes"></textarea>
+            </div>
+            
+        
           </form>
+
+
+
+
+
           
         <div class="row">
             <div class="col-lg-5">
