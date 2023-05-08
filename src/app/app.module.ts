@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BreadcrumbModule } from 'angular-crumbs';
@@ -17,12 +17,20 @@ import { DonationsGiftComponent } from './donation/donations-gift/donations-gift
 import { CollectComponent } from './donation/collect/collect.component';
 import { MyAssociationComponent } from './association/my-association/my-association.component';
 import { AddAssociationComponent } from './association/add-association/add-association.component';
+import { AssociationRequestsComponent } from './association-requests/association-requests.component';
+import { AddRequestComponent } from './association-requests/add-request/add-request.component';
+import { SharedModule } from './components/shared/shared.module';
+import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    
+    
     
   ],
   imports: [
@@ -32,7 +40,10 @@ import { AddAssociationComponent } from './association/add-association/add-assoc
     BrowserAnimationsModule,
     BreadcrumbModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    SharedModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

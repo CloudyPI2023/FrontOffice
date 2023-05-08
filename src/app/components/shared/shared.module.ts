@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BreadcrumbModule } from 'angular-crumbs';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
@@ -29,6 +29,13 @@ import { DonationsGiftComponent } from 'src/app/donation/donations-gift/donation
 import { CollectComponent } from 'src/app/donation/collect/collect.component';
 import { AddAssociationComponent } from 'src/app/association/add-association/add-association.component';
 import { MyAssociationComponent } from 'src/app/association/my-association/my-association.component';
+import { AssociationRequestsComponent } from 'src/app/association-requests/association-requests.component';
+import { AddRequestComponent } from 'src/app/association-requests/add-request/add-request.component';
+import { ArticleComponent } from 'src/app/article/article.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ArticleDetailComponent } from 'src/app/article-detail/article-detail.component';
+import { CommentComponent } from 'src/app/comment/comment.component';
+
 
 
 
@@ -55,7 +62,12 @@ import { MyAssociationComponent } from 'src/app/association/my-association/my-as
     DonationsGiftComponent,
     CollectComponent,
     AddAssociationComponent,
-    MyAssociationComponent
+    MyAssociationComponent,
+    AssociationRequestsComponent,
+    AddRequestComponent,
+    ArticleComponent,
+    ArticleDetailComponent,
+    CommentComponent,
   ],
   imports: [
     CommonModule,
@@ -64,7 +76,9 @@ import { MyAssociationComponent } from 'src/app/association/my-association/my-as
     BreadcrumbModule,
     FormsModule,
     SlickCarouselModule,
-    NgxSliderModule
+    NgxSliderModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
   ],
   exports:[
     HeaderComponent,
