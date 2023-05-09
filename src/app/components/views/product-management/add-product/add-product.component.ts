@@ -31,7 +31,8 @@ export class AddProductComponent implements OnInit {
     ReclamationsProduct: [],
     creationDate: new Date(),
     categoryProduct: { idCategory: 0, nameCategory: '', descriptionCategory: '', archived: true },
-    idCategory: 0
+    idCategory: 0,
+    idUser:0
   }
 
   allCategories: Category[];
@@ -87,6 +88,11 @@ export class AddProductComponent implements OnInit {
   }
 
   addProduct(p: Product) {
+    if (this.token) {
+      this.decodedToken= this.jwtService.DecodeToken(this.token);
+      this.idUser =this.decodedToken.idUser;
+      console.log(this.idUser);
+   }
     this.ps.checkProductExists(this.name).subscribe(
       (exists: boolean) => {
         if (exists) {
@@ -96,7 +102,8 @@ export class AddProductComponent implements OnInit {
             this.categ = data;
             console.log("Category object: ", this.categ);
             p.idCategory = this.categ.idCategory;
-            p.idProduct=this.idUser;
+            p.userProduct.idUser=this.idUser;
+            p.idUser=this.decodedToken.idUser;
             console.log("lena l9aha " + p.categoryProduct.idCategory)
             this.ps.addProduct(p).subscribe(() => {
               alert("Product added successfully")

@@ -35,7 +35,7 @@ export class MyDonationsComponent implements OnInit {
       this.decodedToken= this.jwtService.DecodeToken(this.token);
       this.idUser =this.decodedToken.idUser;
    }
-    this.donationService.getMyDonations(idUser).subscribe(data => {
+    this.donationService.getMyDonations(this.idUser).subscribe(data => {
       this.donations = data;
     });
   }

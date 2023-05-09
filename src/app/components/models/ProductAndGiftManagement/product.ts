@@ -21,6 +21,7 @@ export class Product {
 
     //nosql
     idCategory:number;
+    idUser:number;
 
 
 

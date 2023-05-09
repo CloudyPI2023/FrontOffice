@@ -12,6 +12,7 @@ import { ReclamationService } from '../reclamation-management/reclamation.servic
 import { GiftService } from '../gift-management/gift.service';
 import { CategoryService } from '../category-management/category.service';
 import { Gift } from '../../models/ProductAndGiftManagement/gift';
+import { JwtServiceService } from '../../services/jwt-service.service';
 //import { NgToastService } from 'ng-angular-popup';
 
 
@@ -33,8 +34,12 @@ export class ProductManagementComponent implements OnInit {
   showButton = true;
   selectedProducts: Product[] = [];
   mygifts:Gift[]
+  token = localStorage.getItem('token');
+  decodedToken : any;
+  idUser :any ;
 
-  constructor( private ps: ProductService,private router: Router, private cs: CategoryService,
+
+  constructor( private jwtService:JwtServiceService,private ps: ProductService,private router: Router, private cs: CategoryService,
     private rs:ReclamationService,private gs:GiftService) { }
 
   ngOnInit(): void {
@@ -42,6 +47,13 @@ export class ProductManagementComponent implements OnInit {
     this.getAllProducts();
     this.getTop3Products();
     this.getCategories();
+
+    if (this.token) {
+      this.decodedToken= this.jwtService.DecodeToken(this.token);
+      this.idUser =this.decodedToken.idUser;
+      console.log(this.idUser);
+
+   }
 
   }
   
@@ -97,8 +109,10 @@ export class ProductManagementComponent implements OnInit {
           this.router.navigate(['/gift-management']);
         }
         else{
+
          
             this.gs.addGift(1,p).subscribe((gift:Gift) => {
+              gift.userGift.idUser=this.decodedToken.idUser;
               alert("Product added successfully to your gift")
               this.router.navigate(['/gift-management']);
             });

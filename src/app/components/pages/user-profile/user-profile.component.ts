@@ -27,9 +27,6 @@ export class UserProfileComponent implements OnInit {
     if (this.token) {
       this.decodedToken= this.jwtService.DecodeToken(this.token);
       this.idUser =this.decodedToken.idUser;
-      this.role =this.decodedToken.roles;
-
-      console.log(this.role);
       console.log(this.idUser);
 
    }
@@ -37,6 +34,7 @@ export class UserProfileComponent implements OnInit {
    this.userService.getUserById(this.idUser).subscribe(
     (data) => {
       this.user = data;
+      this.editUser = this.user;
     },
     (error) => {
       console.error(error);
@@ -45,13 +43,13 @@ export class UserProfileComponent implements OnInit {
 
  
   }
-
   public OnDetailsUser(idUser: number){
     this.userService.getUserById(idUser).subscribe(
       (response: User) => {
-        this.editUser = this.user;
+        this.editUser = response;
         console.log(response);
-      });
+      }
+    );
   }
 
 
@@ -61,16 +59,10 @@ export class UserProfileComponent implements OnInit {
     this.editing = !this.editing;
   }
 
- /* onSubmit() {
-    this.userService.updateUser(this.user).subscribe(user => {
-      this.editing = false;
-    });
-  }*/
-
-  public onUpdateUser(user: User) {
-    this.userService.updateUser(user).subscribe(
-      (response: User) => {
-        console.log(response);
+  /*public onUpdateUser(user: User) {
+    this.userService.updateUser(this.user).subscribe(
+      (user: User) => {
+        console.log(user);
       },(error) => {
         //alert(error.message);
       if (error.status === 403) {
@@ -82,9 +74,23 @@ export class UserProfileComponent implements OnInit {
        // this.toast.error({detail:'Error',summary:'Something wrong !',position:'tr',duration:2000})    }
       }
     );
-  }
+  }*/
 
-  
+  onUpdateUser() {
+    this.userService.updateUser(this.user).subscribe(
+      (user: User) => {
+        console.log(user);
+        this.editing = false;
+      },
+      (error) => {
+        if (error.status === 403) {
+          alert('Your are not authorized to do this action .');
+        } else {
+          alert('Something wrong !');
+        }
+      }
+    );
+  }
 
 
 
