@@ -51,6 +51,8 @@ import { EventComponent } from '../views/event/event.component';
 import { ArticleDetailComponent } from '../views/article-detail/article-detail.component';
 import { ArticleComponent } from '../views/article/article.component';
 import { CommentComponent } from '../views/comment/comment.component';
+import { CommandComponent } from '../views/command/command.component';
+import { MyCommandsComponent } from '../views/command/my-commands/my-commands.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -98,6 +100,8 @@ import { CommentComponent } from '../views/comment/comment.component';
     ArticleComponent,
     ArticleDetailComponent,
     CommentComponent,
+    CommandComponent,
+    MyCommandsComponent
 
 
   ],

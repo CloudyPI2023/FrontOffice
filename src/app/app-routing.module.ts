@@ -29,6 +29,8 @@ import { ReservationComponent } from './components/views/reservation/reservation
 import { ArticleDetailComponent } from './components/views/article-detail/article-detail.component';
 import { ArticleComponent } from './components/views/article/article.component';
 import { CommentComponent } from './components/views/comment/comment.component';
+import { MyCommandsComponent } from './components/views/command/my-commands/my-commands.component';
+import { CommandComponent } from './components/views/command/command.component';
 
 const routes: Routes = [
   // Home
@@ -124,7 +126,9 @@ const routes: Routes = [
 { path: 'article-detail/:id', component:ArticleDetailComponent},
 { path: 'comment', component:CommentComponent},
 
-  
+   //Commands
+   {path:'addCommand/:idProduct',component:CommandComponent},
+   {path:'myCommands',component:MyCommandsComponent},
 
 
 

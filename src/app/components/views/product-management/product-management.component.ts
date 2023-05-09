@@ -157,7 +157,10 @@ export class ProductManagementComponent implements OnInit {
 
 
   
-
+///fakher
+AddCommand(idProduct: number){
+  this.router.navigate(['addCommand', idProduct]);
+}
 
 
 }
