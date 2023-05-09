@@ -14,7 +14,7 @@
     <img src="assets/img/subheader-tr.png" class="tr" alt="subheader">
 </div>
 <br><br>
-<div class="container" style=" padding: 5px;box-sizing: border-box;margin:auto">
+<div class="container" style=" padding: 5px;box-sizing: border-box;margin:auto; margin-right: -70px;">
     <form>
        
             <div class="mb-3" >
@@ -35,10 +35,11 @@
             <div class="mb-3" >
                 <label for="name">Category name </label>
                 <div>
+                   
                     <select id="nameCategory" name="nameCategory" 
                         [(ngModel)]="p.categoryProduct.nameCategory" required #nameC="ngModel"
                         (change)="onSelected(p.categoryProduct.nameCategory)" style="width: 383px;">
-
+                        <option disabled selected>Select category</option>
                         <option style="width: 383px;" *ngFor="let c of allCategories" [value]="c.nameCategory">{{c.nameCategory}}</option>
 
                     </select>
@@ -64,7 +65,7 @@
             <div class="mb-3" >
                 <label for="quantity">Product quantity</label>
                 <input placeholder="Product quantity"  type="number" class="form-control"
-                    id="quantity" [(ngModel)]="p.quantityProduct" #Pq='ngModel' min="15" name="quantity"
+                    id="quantity" [(ngModel)]="p.quantityProduct" #Pq='ngModel' min=15 name="quantity"
                     style="width: 383px;" required>
             </div>
             <div *ngIf="Pq.invalid && (Pq.touched || Pq.dirty)">
