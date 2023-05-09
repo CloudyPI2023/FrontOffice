@@ -44,11 +44,14 @@ export class ReservationComponent implements OnInit {
       this.reservations = data;
       this.totalReservation = this.reservations.length;
     });
+
   }
 
   
 
-
+ sortReservationsByDate(): void {
+    this.reservations.sort((a, b) => new Date(a.dateReservation).getTime() - new Date(b.dateReservation).getTime());
+  }
 
   
   

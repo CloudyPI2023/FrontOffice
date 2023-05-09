@@ -45,10 +45,25 @@ export class EventComponent implements OnInit {
   constructor(private http: HttpClient,private reservationService:ReservationService ,private eventService:EventService
     ,private router: Router) { }
 
-
+    sortEventsByName() {
+      this.events.sort((a, b) => {
+        if (a.nameEvent < b.nameEvent) return -1;
+        if (a.nameEvent > b.nameEvent) return 1;
+        return 0;
+      });
+    }
+  
+    sortEventsByDate() {
+      this.events.sort((a, b) => {
+        if (a.beginsAtEvent < b.beginsAtEvent) return -1;
+        if (a.beginsAtEvent > b.beginsAtEvent) return 1;
+        return 0;
+      });
+    }
 
   ngOnInit(): void {
     this.getEvents(); 
+    
   
   }
 
@@ -87,9 +102,10 @@ export class EventComponent implements OnInit {
   
   public onAddReservation(id:number) {
   
-        this.r.idUser=1
+        this.r.idUser=2
+
         this.r.idEvent=id;
-        let confirmAction = confirm("Are you sure to execute this action?");
+        let confirmAction = confirm("Are you sure you want to book this event?");
         if (confirmAction) {
          
           this.reservationService.createReservation(this.r).subscribe(

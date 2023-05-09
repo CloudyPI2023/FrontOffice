@@ -28,6 +28,22 @@
         <img src="assets/img/subheader-tr.png" class="tr" alt="subheader">
     </div>
 
+
+    <div class="container">
+        <div class="row mt-3">
+          <div class="col-md-12 text-center">
+            <button class="btn btn-primary" (click)="sortReservationsByDate()">Sort By Date</button>
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div class="col-md-12 text-center">
+            <button class="btn btn-green" routerLink="/event">Check Events</button>
+          </div>
+        </div>
+      </div>
+      
+
 <!--data-->
 
 <div class="section">
@@ -46,26 +62,31 @@
                                 
                             </div>
                             <div class="sigma_product-body">
-                                <h5 class="sigma_product-title"> <a
-                                        >{{reservation.codeReservation}}</a> </h5>
-                                <div class="sigma_rating">
-                                    <i> {{reservation.idReservation}} </i>
+                                <div class="sigma_product-code">
+                                    <label>Reservation code</label>
+                                    <h5 class="sigma_product-title"><a>{{reservation.codeReservation}}</a></h5>
+                                </div>
+                            
+
+                                <div class="sigma_rating" label="idRes">
+                                    <i>{{reservation.idReservation}}</i>
                                 </div>
                                 <div class="sigma_product-price">
                                     <span>{{reservation.dateReservation}}</span>
-                                    <!--<span *ngIf="item.discount">{{item.price | number:'1.2-2'}}$</span>-->
-                                </div> 
-
-                        
-                              
-                                <!-- Cart 
-                                <button 
-                                    class="sigma_btn btn-sm" (click)="onOpenModal(association, 'details')">View More
-                                </button> 
-                                <button type="button" (click)="onOpenModal(association, 'details')" class="btn btn-success btn-link btn-sm btn-just-icon">
-                                    <i class="material-icons">View More</i>
-                                </button>-->
+                                </div>
+                                <div class="sigma_product-price">
+                                    <span>{{reservation.userReservation.firstName}} {{reservation.userReservation.lastName}}</span>
+                                </div>
+                                <div class="sigma_product-price">
+                                   <!--    <span>{{reservation.event.nameEvent}}</span>-->
+                                   <!-- <span>{{reservation.event ? reservation.event.nameEvent : 'No event'}}</span>-->
+                                    <div *ngIf="reservation.event">
+                                        <span>{{reservation.event.nameEvent}}</span>
+                                      </div>
+                                </div>
+                                
                             </div>
+                            
                             
                         </div>
                     </div>

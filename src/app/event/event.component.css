@@ -1,0 +1,16 @@
+.btn-green {
+    background-color: rgb(0, 96, 128);
+    color: white;
+  }
+  
+  .btn-blue {
+    background-color: blue;
+    color: white;
+  }
+  
+  .event-image {
+    width: 200px; /* adjust to your desired width */
+    height: 150px; /* adjust to your desired height */
+    object-fit: cover; /* scales the image to cover the entire element without stretching */
+  }
+  
